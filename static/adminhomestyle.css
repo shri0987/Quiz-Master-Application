@@ -1,0 +1,45 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+.container-box {
+    width: 100%;
+    max-width: 400px;
+}
+.login-card, .button-card {
+    width: 100%;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    background-color: #fff;
+    text-align: center;
+}
+.button-card {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+.button-card a {
+    flex: 0 0 48%;
+}
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+.form-group {
+    flex: 1;
+}
+.btn-block {
+    width: 100%;
+}
+a.text-center {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+}

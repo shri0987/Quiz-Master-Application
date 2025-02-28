@@ -960,3 +960,214 @@ INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
 INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 22:02:01] "GET /user/login HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 22:02:02] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 22:02:26] "GET /user/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 22:02:26] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 22:02:28] "GET /admin/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 22:02:28] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 22:05:04] "GET /user/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 22:05:04] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:14:09] "GET /user/register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:14:09] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:14:12] "GET /user/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:14:12] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:14:13] "GET /admin/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:14:13] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:14:17] "GET /user/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:14:17] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:28:09] "GET /admin/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:28:09] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:28:11] "GET /user/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:28:11] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:28:14] "GET /user/register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:28:14] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:31:17] "GET /user/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:31:17] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:31:19] "GET /admin/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:31:19] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:33:01] "GET /user/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:33:01] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:36:43] "GET /user/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:36:43] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:36:44] "GET /user/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:36:44] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:36:46] "GET /user/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:36:46] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:37:41] "GET /user/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:37:41] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:38:14] "GET /user/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:38:14] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:38:16] "GET /admin/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:38:16] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:38:22] "GET /user/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:38:23] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:38:43] "GET /admin/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:38:43] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:58:59] "GET /admin/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:58:59] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:59:01] "GET /user/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:59:01] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:59:02] "GET /admin/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:59:02] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:59:13] "[33mGET /admin/dashboard/shri0987 HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:00:11] "[33mGET /admin/dashboard/shri0987 HTTP/1.1[0m" 404 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:01:44] "[33mGET /admin/dashboard/shri0987 HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:01:45] "[33mGET /admin/dashboard/shri0987 HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:01:52] "GET /admin/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:01:52] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Login request for admin shri0987
+INFO:root:Fetching admin shri0987 
+INFO:root:Admin shri0987 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:02:05] "[31m[1mPOST /v1/admin/login HTTP/1.1[0m" 400 -
+INFO:root:Login request for admin shri0987
+INFO:root:Fetching admin shri0987 
+INFO:root:Admin shri0987 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:02:27] "[31m[1mPOST /v1/admin/login HTTP/1.1[0m" 400 -
+INFO:root:Login request for admin shri0987
+INFO:root:Fetching admin shri0987 
+INFO:root:Admin shri0987 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:03:12] "POST /v1/admin/login HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:04:51] "GET /admin/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:04:51] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Login request for admin shri0987
+INFO:root:Fetching admin shri0987 
+INFO:root:Admin shri0987 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:04:59] "POST /v1/admin/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:05:02] "GET /admin/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:05:02] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:06:37] "GET /user/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:06:37] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:07:47] "[33mGET /home HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:07:53] "GET /user/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:07:53] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:07:55] "GET /admin/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:07:55] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Login request for admin 
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:07:58] "[31m[1mPOST /v1/admin/login HTTP/1.1[0m" 400 -
+INFO:root:Login request for admin shri0987
+INFO:root:Fetching admin shri0987 
+INFO:root:Admin shri0987 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:08:08] "[32mPOST /v1/admin/login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:08:08] "[35m[1mGET /admin/dashboard/shri0987 HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:root:Admin dashboard request for shri0987
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:09:43] "[32mGET /admin/dashboard/shri0987 HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:09:43] "GET /admin/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:09:43] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Login request for admin shri0987
+INFO:root:Fetching admin shri0987 
+INFO:root:Admin shri0987 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:09:54] "[32mPOST /v1/admin/login HTTP/1.1[0m" 302 -
+INFO:root:Admin dashboard request for shri0987
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:09:54] "[35m[1mGET /admin/dashboard/shri0987 HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:11:10] "GET /admin/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:11:10] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Login request for admin shri0987
+INFO:root:Fetching admin shri0987 
+INFO:root:Admin shri0987 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:11:17] "[32mPOST /v1/admin/login HTTP/1.1[0m" 302 -
+INFO:root:Admin dashboard request for shri0987
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:11:17] "[35m[1mGET /admin/dashboard/shri0987 HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:13:02] "GET /admin/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:13:02] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Login request for admin shri0987
+INFO:root:Fetching admin shri0987 
+INFO:root:Admin shri0987 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:13:12] "[32mPOST /v1/admin/login HTTP/1.1[0m" 302 -
+INFO:root:Admin dashboard request for shri0987
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:13:12] "[35m[1mGET /admin/dashboard/shri0987 HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:15:16] "GET /admin/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:15:16] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Login request for admin shri0987
+INFO:root:Fetching admin shri0987 
+INFO:root:Admin shri0987 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:15:23] "[32mPOST /v1/admin/login HTTP/1.1[0m" 302 -
+INFO:root:Admin dashboard request for shri0987
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:15:23] "GET /admin/dashboard/shri0987 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:15:23] "GET /static/adminhomestyle.css HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:root:Admin dashboard request for shri0987
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:16:29] "[32mGET /admin/dashboard/shri0987 HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:16:29] "GET /admin/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:16:29] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Login request for admin shri0987
+INFO:root:Fetching admin shri0987 
+INFO:root:Admin shri0987 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:16:38] "[32mPOST /v1/admin/login HTTP/1.1[0m" 302 -
+INFO:root:Admin dashboard request for shri0987
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:16:38] "GET /admin/dashboard/shri0987 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:16:38] "[36mGET /static/adminhomestyle.css HTTP/1.1[0m" 304 -
+INFO:root:Admin dashboard request for shri0987
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:16:46] "GET /admin/dashboard/shri0987 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:16:46] "[36mGET /static/adminhomestyle.css HTTP/1.1[0m" 304 -
+INFO:root:Admin dashboard request for shri0987
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:16:46] "GET /admin/dashboard/shri0987 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:16:46] "[36mGET /static/adminhomestyle.css HTTP/1.1[0m" 304 -
+INFO:root:Login request for admin shri0987
+INFO:root:Fetching admin shri0987 
+INFO:root:Admin shri0987 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:16:50] "[32mPOST /v1/admin/login HTTP/1.1[0m" 302 -
+INFO:root:Admin dashboard request for shri0987
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:16:50] "GET /admin/dashboard/shri0987 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:16:50] "[36mGET /static/adminhomestyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:18:38] "[36mGET /static/adminhomestyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:18:42] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Login request for admin shri0987
+INFO:root:Fetching admin shri0987 
+INFO:root:Admin shri0987 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:18:46] "[32mPOST /v1/admin/login HTTP/1.1[0m" 302 -
+INFO:root:Admin dashboard request for shri0987
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:18:46] "GET /admin/dashboard/shri0987 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:18:46] "[36mGET /static/adminhomestyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:19:24] "GET /user/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:19:24] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Login request for user shri0987
+INFO:root:Check existence of username shri0987
+ERROR:root:Exception occured while fetching user: User not found
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:19:34] "[33mPOST /v1/user/login HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:20:01] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:20:06] "GET /admin/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:20:06] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Login request for admin shri0987
+INFO:root:Fetching admin shri0987 
+INFO:root:Admin shri0987 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:20:14] "[32mPOST /v1/admin/login HTTP/1.1[0m" 302 -
+INFO:root:Admin dashboard request for shri0987
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:20:14] "GET /admin/dashboard/shri0987 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:20:14] "[36mGET /static/adminhomestyle.css HTTP/1.1[0m" 304 -

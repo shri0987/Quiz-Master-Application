@@ -1,5 +1,6 @@
 import os
 import logging
+import secrets
 from flask import Flask
 from flask_migrate import Migrate
 from flask_cors import CORS
@@ -14,6 +15,8 @@ from controllers.admincontroller import AdminController
 
 def create_app():
     app = Flask(__name__)
+    secret_key = secrets.token_hex(32)
+    app.secret_key = secret_key
     app.config.from_object(Config) 
     logging.basicConfig(filename = 'app.log', level = logging.INFO)
     db.init_app(app)
