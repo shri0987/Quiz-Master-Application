@@ -1,0 +1,449 @@
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:root:Create user request for john123
+INFO:root:Check existence of username john123
+INFO:root:Start creating user john123
+ERROR:root:Database error occured in create user : database is locked
+ERROR:root:Error occured while creating user: Database error occured while executing SQL query
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:06:12] "[35m[1mPOST /v1/create HTTP/1.1[0m" 500 -
+INFO:root:Create user request for john123
+INFO:root:Check existence of username john123
+INFO:root:Start creating user john123
+INFO:root:User john123 created successfully
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:06:31] "[35m[1mPOST /v1/create HTTP/1.1[0m" 201 -
+INFO:root:Login request for user shrimay0987
+INFO:root:Fetching user shrimay0987 
+INFO:root:User shrimay0987 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:09:35] "POST /v1/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:09:55] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Login request for user shrimay0987
+INFO:root:Fetching user shrimay0987 
+INFO:root:User shrimay0987 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:09:58] "POST /v1/login HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:17:15] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:17:15] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:17:16] "[33mGET /userregister.html HTTP/1.1[0m" 404 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:app:Exception on /home [GET]
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Documents\Quiz Master\controllers\usercontroller.py", line 19, in home
+    return render_template('userlogin.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\ASUS\Documents\Quiz Master\templates\userlogin.html", line 34, in top-level template code
+    <a href="{{url_for('register')}}" class="btn btn-success">Register</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'register'. Did you mean 'user_login' instead?
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:18:10] "[35m[1mGET /home HTTP/1.1[0m" 500 -
+ERROR:app:Exception on /home [GET]
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Documents\Quiz Master\controllers\usercontroller.py", line 19, in home
+    return render_template('userlogin.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\ASUS\Documents\Quiz Master\templates\userlogin.html", line 34, in top-level template code
+    <a href="{{url_for('register')}}" class="btn btn-success">Register</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'register'. Did you mean 'user_login' instead?
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:18:12] "[35m[1mGET /home HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:app:Exception on /home [GET]
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Documents\Quiz Master\controllers\usercontroller.py", line 19, in home
+    return render_template('userlogin.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\ASUS\Documents\Quiz Master\templates\userlogin.html", line 34, in top-level template code
+    <a href="{{url_for('register')}}" class="btn btn-success">Register</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'register'. Did you mean 'user_login' instead?
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:18:41] "[35m[1mGET /home HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:22:23] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:22:23] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:22:26] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:22:26] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:27:15] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:27:15] "GET /static/registerstyle.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:27:20] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:27:20] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:27:21] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:27:21] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:28:00] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:28:00] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:29:20] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:29:20] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:29:21] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:29:21] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:29:26] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:29:26] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:29:28] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:29:28] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:30:54] "[35m[1mPOST /v1/create HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:32:21] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:32:21] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:32:23] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:32:23] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Create user request for 
+ERROR:root:Error occured while creating user: User details are not valid
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:32:40] "[31m[1mPOST /v1/create HTTP/1.1[0m" 400 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:35:13] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:35:13] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:35:15] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:35:16] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:35:18] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:35:18] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Create user request for 
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:35:36] "[31m[1mPOST /v1/create HTTP/1.1[0m" 400 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:36:35] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:36:35] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Create user request for user123
+ERROR:root:Error occured while creating user: User details are not valid
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:37:23] "[31m[1mPOST /v1/create HTTP/1.1[0m" 400 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:39:16] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Create user request for user123
+ERROR:root:Error occured while creating user: User details are not valid
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:39:35] "[31m[1mPOST /v1/create HTTP/1.1[0m" 400 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:44:26] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:44:26] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:44:32] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:44:32] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Create user request for shrimay0987
+ERROR:root:Error occured while creating user: User details are not valid
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:44:48] "[31m[1mPOST /v1/create HTTP/1.1[0m" 400 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:46:22] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:46:22] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:46:23] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:46:23] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Create user request for shrimay0987
+INFO:root:User details are valid
+INFO:root:Check existence of username shrimay0987
+INFO:root:User shrimay0987 fetched successfully
+ERROR:root:Error occured while creating user: User already exists
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:46:45] "[31m[1mPOST /v1/create HTTP/1.1[0m" 400 -
+INFO:root:Create user request for abhi123
+INFO:root:User details are valid
+INFO:root:Check existence of username abhi123
+INFO:root:Start creating user abhi123
+INFO:root:User abhi123 created successfully
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:46:54] "[35m[1mPOST /v1/create HTTP/1.1[0m" 201 -
+INFO:root:Create user request for abhi123
+INFO:root:User details are valid
+INFO:root:Check existence of username abhi123
+INFO:root:User abhi123 fetched successfully
+ERROR:root:Error occured while creating user: User already exists
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:46:59] "[31m[1mPOST /v1/create HTTP/1.1[0m" 400 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:55:06] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:55:06] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:55:10] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:55:10] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:56:45] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:56:45] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Create user request for shri1234
+INFO:root:User details are valid
+INFO:root:Check existence of username shri1234
+INFO:root:Start creating user shri1234
+INFO:root:User shri1234 created successfully
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:57:37] "[35m[1mPOST /v1/create HTTP/1.1[0m" 201 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:57:37] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Login request for user shri1234
+INFO:root:Fetching user shri1234 
+INFO:root:User shri1234 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:57:51] "[31m[1mPOST /v1/login HTTP/1.1[0m" 400 -
+INFO:root:Login request for user shri1234
+INFO:root:Fetching user shri1234 
+INFO:root:User shri1234 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:57:59] "POST /v1/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:58:03] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:58:03] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:root:Create user request for shri1234
+INFO:root:User details are valid
+INFO:root:Check existence of username shri1234
+INFO:root:User shri1234 fetched successfully
+ERROR:root:Error occured while creating user: User already exists
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:59:45] "[31m[1mPOST /v1/create HTTP/1.1[0m" 400 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:59:51] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:59:51] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:59:54] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:59:54] "GET /static/registerstyle.css HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:00:15] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:00:16] "GET /static/registerstyle.css HTTP/1.1" 200 -
+INFO:root:Create user request for user0987
+INFO:root:User details are valid
+INFO:root:Check existence of username user0987
+INFO:root:Start creating user user0987
+INFO:root:User user0987 created successfully
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:01:12] "[35m[1mPOST /v1/create HTTP/1.1[0m" 201 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:01:12] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Login request for user shrimay0987
+INFO:root:Fetching user shrimay0987 
+INFO:root:User shrimay0987 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:01:25] "POST /v1/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:01:30] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:01:30] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:01:37] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:01:37] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:01:39] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:01:39] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:01:44] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:01:44] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:01:58] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:01:58] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:03:30] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:03:30] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:03:55] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:03:55] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:05:18] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:05:18] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:06:39] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:06:40] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:06:52] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:06:52] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:06:54] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:06:54] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:07:44] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:07:44] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:08:05] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:08:05] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:08:20] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:08:20] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:08:25] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:08:25] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:10:07] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:10:07] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:10:30] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:10:30] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:10:35] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:10:35] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:11:05] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:11:05] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:11:55] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:11:55] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Create user request for shrimay0987
+INFO:root:User details are valid
+INFO:root:Check existence of username shrimay0987
+INFO:root:User shrimay0987 fetched successfully
+ERROR:root:Error occured while creating user: User already exists
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:12:23] "[31m[1mPOST /v1/create HTTP/1.1[0m" 400 -
+INFO:root:Create user request for shri10000
+INFO:root:User details are valid
+INFO:root:Check existence of username shri10000
+INFO:root:Start creating user shri10000
+ERROR:root:Database error occured in create user : UNIQUE constraint failed: users.email
+ERROR:root:Error occured while creating user: Database error occured while executing SQL query
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:12:39] "[35m[1mPOST /v1/create HTTP/1.1[0m" 500 -
+INFO:root:Create user request for shri10000
+INFO:root:User details are valid
+INFO:root:Check existence of username shri10000
+INFO:root:Start creating user shri10000
+INFO:root:User shri10000 created successfully
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:12:57] "[35m[1mPOST /v1/create HTTP/1.1[0m" 201 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:12:57] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:14:22] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:14:22] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:15:03] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:15:03] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:15:04] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:15:04] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:16:06] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:16:06] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:18:40] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:18:40] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:19:15] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:19:15] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:19:27] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:19:27] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:19:28] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:19:28] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:19:31] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:19:31] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:19:35] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:19:35] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:19:56] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:19:56] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:20:17] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:20:17] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+ERROR:flask_migrate:Error: Directory migrations already exists and is not empty
+ERROR:flask_migrate:Error: Directory migrations already exists and is not empty
+ERROR:flask_migrate:Error: Directory migrations already exists and is not empty
+ERROR:flask_migrate:Error: Directory migrations already exists and is not empty
+ERROR:flask_migrate:Error: Directory migrations already exists and is not empty
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:51:03] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:51:03] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:51:13] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:51:14] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:51:21] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:51:21] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:51:51] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:51:51] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:51:57] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:51:57] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -

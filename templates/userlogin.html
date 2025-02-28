@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/loginstyle.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container-box">
+    <div class="login-card">
+        <h3 style="text-align: center;">Quiz Master</h3>
+        <br>
+        <form action="{{ url_for('user_login') }}" method="POST">
+            <div class="form-group text-left">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" name = "username" placeholder="Enter username">
+            </div>
+            <div class="form-group text-left">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name = "password" placeholder="Enter password">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+            <br>
+            <a href="#" class="text-center" style="text-decoration: none;">Forgot Password?</a>
+        </form>
+    </div>
+    <br>
+    <div class="button-card">
+        <a href="{{ url_for('register') }}" class="btn btn-success">Register</a>
+        <a href="#" class="btn btn-secondary">Admin Login</a>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
