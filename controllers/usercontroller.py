@@ -14,16 +14,17 @@ class UserController:
 
     def user_routes(self):
 
-        @self.app.route('/home')
-        def home():
+        @self.app.route('/user/login')
+        def user_home():
             return render_template('userlogin.html')
         
-        @self.app.route('/register')
-        def register():
+        
+        @self.app.route('/user/register')
+        def user_register():
             return render_template('usercreate.html')
 
 
-        @self.app.route('/v1/login', methods=['POST'])
+        @self.app.route('/v1/user/login', methods=['POST'])
         def user_login():
             try:
                 username = request.form.get('username')
@@ -51,8 +52,8 @@ class UserController:
             except Exception as e:
                 return jsonify({"error": f"Error occurred while processing login request"}), 500
             
-        
-        @self.app.route('/v1/create', methods=['POST'])
+
+        @self.app.route('/v1/user/create', methods=['POST'])
         def user_create():
             try:
                 create_request = request.form

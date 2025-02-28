@@ -15,16 +15,16 @@ class AdminRepository:
             if result is None:
                 return None
             admin = Admin(*result)
-            logging.info("User %s fetched successfully", username)
+            logging.info("Admin %s fetched successfully", username)
             return admin
                 
         except sqlite3.Error as e:
-            logging.error("Database error in fetch user : %s", e)
+            logging.error("Database error in fetch admin : %s", e)
             raise Exception("Database error occured while executing SQL query")
         
         except Exception as e:
-            logging.error("Error occured in fetch user : %s", e)
-            raise Exception("Error occured in fetch user")
+            logging.error("Error occured in fetch admin : %s", e)
+            raise Exception("Error occured in fetch admin")
         
         finally:
             conn.close()

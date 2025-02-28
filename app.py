@@ -10,6 +10,7 @@ from models.admin import Admin
 from models.user import User
 from repository.database import db, migrate
 from controllers.usercontroller import UserController
+from controllers.admincontroller import AdminController
 
 def create_app():
     app = Flask(__name__)
@@ -21,6 +22,7 @@ def create_app():
         db.create_all()
     CORS(app)
     UserController(app)
+    AdminController(app)
     return app
 
 app = create_app()

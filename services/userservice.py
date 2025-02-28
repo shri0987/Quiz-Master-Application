@@ -73,6 +73,9 @@ class UserService:
             if not self.is_valid_username(username):
                 raise AppError("Username is not valid", AppError.VALIDATION_ERROR)
             
+            if not self.user_exists(username):
+                raise AppError("User not found", AppError.USER_NOT_FOUND)
+            
             logging.info("Fetching user %s ", username)
             user = self.user_repository.get_user_by_username(username)
             if user is not None:

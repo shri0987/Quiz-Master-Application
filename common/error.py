@@ -5,6 +5,7 @@ class AppError(Exception):
     VALIDATION_ERROR = ('E1003', 400)
     INTERNAL_SERVER_ERROR = ('E1004', 500)
     USER_EXISTS = ('E1005', 400)
+    USER_NOT_FOUND = ('E1006', 404)
 
     def __init__(self, error_message, error_code_tuple):
         super().__init__(error_message)

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Quiz Master | Login</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static/loginstyle.css" rel="stylesheet">
@@ -22,7 +22,7 @@
             <div class="form-group text-left">
                 <label for="password">Password</label>
                 <input type="password" class="form-control" id="password" name = "password" placeholder="Enter password">
-            </div>
+            </div>  
             <br>
             <button type="submit" class="btn btn-primary btn-block">Login</button>
             <br>
@@ -31,8 +31,8 @@
     </div>
     <br>
     <div class="button-card">
-        <a href="{{ url_for('register') }}" class="btn btn-success">Register</a>
-        <a href="#" class="btn btn-secondary">Admin Login</a>
+        <a href="{{ url_for('user_register') }}" class="btn btn-success">Register</a>
+        <a href="{{ url_for('admin_home') }}" class="btn btn-secondary">Admin Login</a>
     </div>
 </div>
 
