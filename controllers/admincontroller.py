@@ -18,7 +18,7 @@ class AdminController:
             return render_template('adminlogin.html')
         
         
-        @self.app.route('/admin/dashboard/<str:username>', methods=['GET'])
+        @self.app.route('/admin/dashboard/<username>', methods=['GET'])
         def admin_dashboard(username):
             try:
                 logging.info(f'Admin dashboard request for {username}')

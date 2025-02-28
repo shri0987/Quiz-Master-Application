@@ -1171,3 +1171,23 @@ INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:20:14] "[32mPOST /v1/admin/login HT
 INFO:root:Admin dashboard request for shri0987
 INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:20:14] "GET /admin/dashboard/shri0987 HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:20:14] "[36mGET /static/adminhomestyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:25:20] "GET /admin/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:25:20] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Login request for admin shri0987
+INFO:root:Fetching admin shri0987 
+INFO:root:Admin shri0987 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:25:32] "[32mPOST /v1/admin/login HTTP/1.1[0m" 302 -
+INFO:root:Admin dashboard request for shri0987
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:25:32] "GET /admin/dashboard/shri0987 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:25:32] "[36mGET /static/adminhomestyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:root:Admin dashboard request for shri0987
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:42:11] "GET /admin/dashboard/shri0987 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:42:11] "[36mGET /static/adminhomestyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:42:14] "GET /user/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:42:14] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
