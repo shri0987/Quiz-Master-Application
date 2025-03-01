@@ -1,1193 +1,260 @@
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:root:Create user request for john123
-INFO:root:Check existence of username john123
-INFO:root:Start creating user john123
-ERROR:root:Database error occured in create user : database is locked
-ERROR:root:Error occured while creating user: Database error occured while executing SQL query
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:06:12] "[35m[1mPOST /v1/create HTTP/1.1[0m" 500 -
-INFO:root:Create user request for john123
-INFO:root:Check existence of username john123
-INFO:root:Start creating user john123
-INFO:root:User john123 created successfully
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:06:31] "[35m[1mPOST /v1/create HTTP/1.1[0m" 201 -
-INFO:root:Login request for user shrimay0987
-INFO:root:Fetching user shrimay0987 
-INFO:root:User shrimay0987 fetched successfully
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:09:35] "POST /v1/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:09:55] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:root:Login request for user shrimay0987
-INFO:root:Fetching user shrimay0987 
-INFO:root:User shrimay0987 fetched successfully
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:09:58] "POST /v1/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 11:45:32] "GET /user/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 11:45:32] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 11:45:33] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 11:45:34] "GET /admin/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 11:45:34] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Login request for admin shri0987
+INFO:root:Fetching admin shri0987 
+INFO:root:Admin shri0987 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 11:45:41] "[32mPOST /v1/admin/login HTTP/1.1[0m" 302 -
+INFO:root:Admin dashboard request for shri0987
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 11:45:41] "GET /admin/dashboard/shri0987 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 11:45:41] "GET /static/admindashboardstyle.css HTTP/1.1" 200 -
+INFO:root:Admin dashboard request for shri0987
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 11:46:24] "GET /admin/dashboard/shri0987 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 11:46:24] "[36mGET /static/admindashboardstyle.css HTTP/1.1[0m" 304 -
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:17:15] "GET /home HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:17:15] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:17:16] "[33mGET /userregister.html HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 11:47:21] "GET /user/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 11:47:21] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 11:47:23] "GET /admin/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 11:47:23] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Login request for admin shri0987
+INFO:root:Fetching admin shri0987 
+INFO:root:Admin shri0987 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 11:47:32] "[32mPOST /v1/admin/login HTTP/1.1[0m" 302 -
+INFO:root:Admin dashboard request for shri0987
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 11:47:32] "GET /admin/dashboard/shri0987 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 11:47:32] "[36mGET /static/admindashboardstyle.css HTTP/1.1[0m" 304 -
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
-ERROR:app:Exception on /home [GET]
-Traceback (most recent call last):
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\controllers\usercontroller.py", line 19, in home
-    return render_template('userlogin.html')
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\templating.py", line 150, in render_template
-    return _render(app, template, context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\templating.py", line 131, in _render
-    rv = template.render(context)
-         ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
-    self.environment.handle_exception()
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "C:\Users\ASUS\Documents\Quiz Master\templates\userlogin.html", line 34, in top-level template code
-    <a href="{{url_for('register')}}" class="btn btn-success">Register</a>
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1121, in url_for
-    return self.handle_url_build_error(error, endpoint, values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1110, in url_for
-    rv = url_adapter.build(  # type: ignore[union-attr]
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'register'. Did you mean 'user_login' instead?
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:18:10] "[35m[1mGET /home HTTP/1.1[0m" 500 -
-ERROR:app:Exception on /home [GET]
-Traceback (most recent call last):
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\controllers\usercontroller.py", line 19, in home
-    return render_template('userlogin.html')
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\templating.py", line 150, in render_template
-    return _render(app, template, context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\templating.py", line 131, in _render
-    rv = template.render(context)
-         ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
-    self.environment.handle_exception()
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "C:\Users\ASUS\Documents\Quiz Master\templates\userlogin.html", line 34, in top-level template code
-    <a href="{{url_for('register')}}" class="btn btn-success">Register</a>
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1121, in url_for
-    return self.handle_url_build_error(error, endpoint, values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1110, in url_for
-    rv = url_adapter.build(  # type: ignore[union-attr]
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'register'. Did you mean 'user_login' instead?
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:18:12] "[35m[1mGET /home HTTP/1.1[0m" 500 -
+INFO:root:Admin dashboard request for shri0987
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 11:59:56] "[32mGET /admin/dashboard/shri0987 HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 11:59:56] "GET /admin/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 11:59:56] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Login request for admin shri0987
+INFO:root:Fetching admin shri0987 
+INFO:root:Admin shri0987 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 12:00:05] "[32mPOST /v1/admin/login HTTP/1.1[0m" 302 -
+INFO:root:Admin dashboard request for shri0987
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 12:00:05] "GET /admin/dashboard/shri0987 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 12:00:05] "[36mGET /static/admindashboardstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Admin dashboard request for shri0987
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 12:04:13] "GET /admin/dashboard/shri0987 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 12:04:13] "[36mGET /static/admindashboardstyle.css HTTP/1.1[0m" 304 -
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
-ERROR:app:Exception on /home [GET]
-Traceback (most recent call last):
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\controllers\usercontroller.py", line 19, in home
-    return render_template('userlogin.html')
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\templating.py", line 150, in render_template
-    return _render(app, template, context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\templating.py", line 131, in _render
-    rv = template.render(context)
-         ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
-    self.environment.handle_exception()
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "C:\Users\ASUS\Documents\Quiz Master\templates\userlogin.html", line 34, in top-level template code
-    <a href="{{url_for('register')}}" class="btn btn-success">Register</a>
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1121, in url_for
-    return self.handle_url_build_error(error, endpoint, values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1110, in url_for
-    rv = url_adapter.build(  # type: ignore[union-attr]
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'register'. Did you mean 'user_login' instead?
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:18:41] "[35m[1mGET /home HTTP/1.1[0m" 500 -
+INFO:root:Admin dashboard request for shri0987
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 12:04:25] "[32mGET /admin/dashboard/shri0987 HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 12:04:25] "GET /admin/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 12:04:26] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 12:04:27] "GET /user/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 12:04:27] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 12:04:29] "GET /user/register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 12:04:29] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 12:04:39] "GET /user/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 12:04:39] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 12:06:36] "GET /admin/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 12:06:36] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 12:06:43] "GET /user/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 12:06:43] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+ERROR:flask_migrate:Error: Directory migrations already exists and is not empty
+ERROR:flask_migrate:Error: Directory migrations already exists and is not empty
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:22:23] "GET /home HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:22:23] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:22:26] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:22:26] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 13:32:08] "GET /user/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 13:32:08] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 13:32:09] "GET /admin/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 13:32:09] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 13:32:12] "GET /user/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 13:32:12] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 13:32:13] "GET /user/register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 13:32:13] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 13:32:21] "GET /user/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 13:32:21] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Creating subject Physics
+INFO:root:Creating subject Physics
+ERROR:root:Error occured while creating subject: 'SubjectService' object is not subscriptable
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 13:32:43] "[35m[1mPOST /v1/subjects/create HTTP/1.1[0m" 500 -
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:27:15] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:27:15] "GET /static/registerstyle.css HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:27:20] "GET /home HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:27:20] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:27:21] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:27:21] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:28:00] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:28:00] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Creating subject Physics
+INFO:root:Creating subject Physics
+ERROR:root:Error occured while creating subject: 'SubjectService' object is not subscriptable
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 13:34:10] "[35m[1mPOST /v1/subjects/create HTTP/1.1[0m" 500 -
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:29:20] "GET /home HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:29:20] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:29:21] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:29:21] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:29:26] "GET /home HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:29:26] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:29:28] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:29:28] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:30:54] "[35m[1mPOST /v1/create HTTP/1.1[0m" 500 -
+INFO:root:Creating subject Physics
+INFO:root:Creating subject Physics
+ERROR:root:Error occured while creating subject: 'SubjectService' object is not subscriptable
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 13:38:25] "[35m[1mPOST /v1/subjects/create HTTP/1.1[0m" 500 -
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:32:21] "GET /home HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:32:21] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:32:23] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:32:23] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:root:Create user request for 
+INFO:root:Creating subject Physics
+INFO:root:Creating subject Physics
+ERROR:root:Error occured while creating subject: 'SubjectService' object is not subscriptable
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 13:44:35] "[35m[1mPOST /v1/subjects/create HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:root:Creating subject Physics
+INFO:root:Creating subject Physics
+ERROR:root:Error occured while creating subject: 'SubjectService' object is not subscriptable
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 13:46:21] "[35m[1mPOST /v1/subjects/create HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:root:Creating subject Physics
+INFO:root:Creating subject Physics
+ERROR:root:Error occured while creating subject: 'SubjectService' object is not subscriptable
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 13:47:27] "[35m[1mPOST /v1/subjects/create HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 13:48:52] "[33mPOST /v1/create HTTP/1.1[0m" 404 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 13:49:20] "[33mPOST /v1/create HTTP/1.1[0m" 404 -
+INFO:root:Create user request for None
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 13:49:33] "[35m[1mPOST /v1/user/create HTTP/1.1[0m" 500 -
+INFO:root:Create user request for john12233
 ERROR:root:Error occured while creating user: User details are not valid
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:32:40] "[31m[1mPOST /v1/create HTTP/1.1[0m" 400 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:35:13] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:35:13] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:35:15] "GET /home HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:35:16] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:35:18] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:35:18] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:root:Create user request for 
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:35:36] "[31m[1mPOST /v1/create HTTP/1.1[0m" 400 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:36:35] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:36:35] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:root:Create user request for user123
-ERROR:root:Error occured while creating user: User details are not valid
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:37:23] "[31m[1mPOST /v1/create HTTP/1.1[0m" 400 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:39:16] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:root:Create user request for user123
-ERROR:root:Error occured while creating user: User details are not valid
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:39:35] "[31m[1mPOST /v1/create HTTP/1.1[0m" 400 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:44:26] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:44:26] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:44:32] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:44:32] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:root:Create user request for shrimay0987
-ERROR:root:Error occured while creating user: User details are not valid
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:44:48] "[31m[1mPOST /v1/create HTTP/1.1[0m" 400 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:46:22] "GET /home HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:46:22] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:46:23] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:46:23] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:root:Create user request for shrimay0987
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 13:50:13] "[31m[1mPOST /v1/user/create HTTP/1.1[0m" 400 -
+INFO:root:Create user request for john12233
 INFO:root:User details are valid
-INFO:root:Check existence of username shrimay0987
-INFO:root:User shrimay0987 fetched successfully
-ERROR:root:Error occured while creating user: User already exists
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:46:45] "[31m[1mPOST /v1/create HTTP/1.1[0m" 400 -
-INFO:root:Create user request for abhi123
-INFO:root:User details are valid
-INFO:root:Check existence of username abhi123
-INFO:root:Start creating user abhi123
-INFO:root:User abhi123 created successfully
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:46:54] "[35m[1mPOST /v1/create HTTP/1.1[0m" 201 -
-INFO:root:Create user request for abhi123
-INFO:root:User details are valid
-INFO:root:Check existence of username abhi123
-INFO:root:User abhi123 fetched successfully
-ERROR:root:Error occured while creating user: User already exists
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:46:59] "[31m[1mPOST /v1/create HTTP/1.1[0m" 400 -
+INFO:root:Check existence of username john12233
+INFO:root:Start creating user john12233
+INFO:root:User john12233 created successfully
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 13:51:48] "[35m[1mPOST /v1/user/create HTTP/1.1[0m" 201 -
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:55:06] "GET /home HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:55:06] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:55:10] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:55:10] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Creating subject Physics
+INFO:root:Creating subject Physics
+ERROR:root:Error occured while creating subject: 'SubjectService' object is not subscriptable
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 13:54:56] "[35m[1mPOST /v1/subjects/create HTTP/1.1[0m" 500 -
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:56:45] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:56:45] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:root:Create user request for shri1234
-INFO:root:User details are valid
-INFO:root:Check existence of username shri1234
-INFO:root:Start creating user shri1234
-INFO:root:User shri1234 created successfully
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:57:37] "[35m[1mPOST /v1/create HTTP/1.1[0m" 201 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:57:37] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:root:Login request for user shri1234
-INFO:root:Fetching user shri1234 
-INFO:root:User shri1234 fetched successfully
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:57:51] "[31m[1mPOST /v1/login HTTP/1.1[0m" 400 -
-INFO:root:Login request for user shri1234
-INFO:root:Fetching user shri1234 
-INFO:root:User shri1234 fetched successfully
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:57:59] "POST /v1/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:58:03] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:58:03] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Creating subject Physics
+INFO:root:Creating subject Physics
+ERROR:root:Error occured while creating subject: 'SubjectService' object is not subscriptable
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 13:56:09] "[35m[1mPOST /v1/subjects/create HTTP/1.1[0m" 500 -
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:root:Create user request for shri1234
-INFO:root:User details are valid
-INFO:root:Check existence of username shri1234
-INFO:root:User shri1234 fetched successfully
-ERROR:root:Error occured while creating user: User already exists
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:59:45] "[31m[1mPOST /v1/create HTTP/1.1[0m" 400 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:59:51] "GET /home HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:59:51] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:59:54] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 00:59:54] "GET /static/registerstyle.css HTTP/1.1" 200 -
+INFO:root:Creating subject Physics
+INFO:root:Creating subject Physics
+ERROR:root:Error occured while creating subject: SubjectService.generate_subject_id() takes 1 positional argument but 2 were given
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 13:57:29] "[35m[1mPOST /v1/subjects/create HTTP/1.1[0m" 500 -
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:00:15] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:00:16] "GET /static/registerstyle.css HTTP/1.1" 200 -
-INFO:root:Create user request for user0987
-INFO:root:User details are valid
-INFO:root:Check existence of username user0987
-INFO:root:Start creating user user0987
-INFO:root:User user0987 created successfully
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:01:12] "[35m[1mPOST /v1/create HTTP/1.1[0m" 201 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:01:12] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:root:Login request for user shrimay0987
-INFO:root:Fetching user shrimay0987 
-INFO:root:User shrimay0987 fetched successfully
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:01:25] "POST /v1/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:01:30] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:01:30] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:01:37] "GET /home HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:01:37] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:01:39] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:01:39] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:01:44] "GET /home HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:01:44] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:01:58] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:01:58] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Creating subject Physics
+INFO:root:Creating subject Physics
+INFO:root:object created <Subject (transient 2142281713568)>
+INFO:root:Start inserting subject
+ERROR:root:Error occured in create subject : 'Subject' object has no attribute 'name'
+ERROR:root:Error occured while creating subject: Error occured in create subject
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 13:58:15] "[35m[1mPOST /v1/subjects/create HTTP/1.1[0m" 500 -
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:03:30] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:03:30] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:03:55] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:03:55] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:05:18] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:05:18] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:06:39] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:06:40] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:06:52] "GET /home HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:06:52] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:06:54] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:06:54] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:07:44] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:07:44] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:08:05] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:08:05] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:08:20] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:08:20] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:08:25] "GET /home HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:08:25] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:10:07] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:10:07] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:10:30] "GET /home HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:10:30] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:10:35] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:10:35] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:11:05] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:11:05] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:11:55] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:11:55] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:root:Create user request for shrimay0987
-INFO:root:User details are valid
-INFO:root:Check existence of username shrimay0987
-INFO:root:User shrimay0987 fetched successfully
-ERROR:root:Error occured while creating user: User already exists
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:12:23] "[31m[1mPOST /v1/create HTTP/1.1[0m" 400 -
-INFO:root:Create user request for shri10000
-INFO:root:User details are valid
-INFO:root:Check existence of username shri10000
-INFO:root:Start creating user shri10000
-ERROR:root:Database error occured in create user : UNIQUE constraint failed: users.email
-ERROR:root:Error occured while creating user: Database error occured while executing SQL query
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:12:39] "[35m[1mPOST /v1/create HTTP/1.1[0m" 500 -
-INFO:root:Create user request for shri10000
-INFO:root:User details are valid
-INFO:root:Check existence of username shri10000
-INFO:root:Start creating user shri10000
-INFO:root:User shri10000 created successfully
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:12:57] "[35m[1mPOST /v1/create HTTP/1.1[0m" 201 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:12:57] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:14:22] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:14:22] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:15:03] "GET /home HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:15:03] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:15:04] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:15:04] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:16:06] "GET /home HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:16:06] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:18:40] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:18:40] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:19:15] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:19:15] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:19:27] "GET /home HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:19:27] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:19:28] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:19:28] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:19:31] "GET /home HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:19:31] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:19:35] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:19:35] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:19:56] "GET /home HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:19:56] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:20:17] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:20:17] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-ERROR:flask_migrate:Error: Directory migrations already exists and is not empty
-ERROR:flask_migrate:Error: Directory migrations already exists and is not empty
-ERROR:flask_migrate:Error: Directory migrations already exists and is not empty
-ERROR:flask_migrate:Error: Directory migrations already exists and is not empty
+INFO:root:Creating subject Physics
+INFO:root:Creating new subject Physics
+INFO:root:Fetching subject with name Physics
+ERROR:root:Database error occured in create subject : table subjects has 3 columns but 4 values were supplied
+ERROR:root:Error occured while creating subject: Database error occured while executing SQL query
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 14:10:05] "[35m[1mPOST /v1/subjects/create HTTP/1.1[0m" 500 -
 ERROR:flask_migrate:Error: Directory migrations already exists and is not empty
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:51:03] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:51:03] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:51:13] "GET /home HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:51:14] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:51:21] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:51:21] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:51:51] "GET /home HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:51:51] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:51:57] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 01:51:57] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Creating subject Physics
+INFO:root:Creating new subject Physics
+INFO:root:Fetching subject with name Physics
+ERROR:root:Error occured in create subject : 'Subject' object has no attribute 'name'
+ERROR:root:Error occured while creating subject: Error occured in create subject
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 14:11:17] "[35m[1mPOST /v1/subjects/create HTTP/1.1[0m" 500 -
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 20:40:53] "GET /home HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 20:40:53] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 20:40:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
-INFO:root:Login request for user shrimay0987
-INFO:root:Fetching user shrimay0987 
-INFO:root:User shrimay0987 fetched successfully
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 20:41:00] "POST /v1/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 20:41:07] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 20:41:07] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 20:41:18] "GET /home HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 20:41:18] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 20:41:20] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 20:41:20] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 20:43:10] "GET /home HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 20:43:10] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 20:43:45] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 20:43:45] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 20:44:00] "GET /home HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 20:44:00] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 20:45:06] "GET /register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 20:45:06] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Creating subject Physics
+INFO:root:Creating new subject Physics
+INFO:root:Fetching subject with name Physics
+INFO:root:Subject Physics fetched successfully
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 14:12:59] "[35m[1mPOST /v1/subjects/create HTTP/1.1[0m" 201 -
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
-ERROR:app:Exception on /home [GET]
-Traceback (most recent call last):
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\controllers\usercontroller.py", line 19, in home
-    return render_template('userlogin.html')
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\templating.py", line 150, in render_template
-    return _render(app, template, context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\templating.py", line 131, in _render
-    rv = template.render(context)
-         ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
-    self.environment.handle_exception()
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "C:\Users\ASUS\Documents\Quiz Master\templates\userlogin.html", line 34, in top-level template code
-    <a href="{{ url_for('user_register') }}" class="btn btn-success">Register</a>
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1121, in url_for
-    return self.handle_url_build_error(error, endpoint, values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1110, in url_for
-    rv = url_adapter.build(  # type: ignore[union-attr]
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'user_register'. Did you mean 'register' instead?
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:08:01] "[35m[1mGET /home HTTP/1.1[0m" 500 -
-ERROR:app:Exception on /home [GET]
-Traceback (most recent call last):
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\controllers\usercontroller.py", line 19, in home
-    return render_template('userlogin.html')
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\templating.py", line 150, in render_template
-    return _render(app, template, context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\templating.py", line 131, in _render
-    rv = template.render(context)
-         ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
-    self.environment.handle_exception()
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "C:\Users\ASUS\Documents\Quiz Master\templates\userlogin.html", line 34, in top-level template code
-    <a href="{{ url_for('user_register') }}" class="btn btn-success">Register</a>
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1121, in url_for
-    return self.handle_url_build_error(error, endpoint, values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1110, in url_for
-    rv = url_adapter.build(  # type: ignore[union-attr]
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'user_register'. Did you mean 'register' instead?
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:08:03] "[35m[1mGET /home HTTP/1.1[0m" 500 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:08:12] "[33mGET /user/home HTTP/1.1[0m" 404 -
-ERROR:app:Exception on /home [GET]
-Traceback (most recent call last):
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\controllers\usercontroller.py", line 19, in home
-    return render_template('userlogin.html')
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\templating.py", line 150, in render_template
-    return _render(app, template, context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\templating.py", line 131, in _render
-    rv = template.render(context)
-         ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
-    self.environment.handle_exception()
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "C:\Users\ASUS\Documents\Quiz Master\templates\userlogin.html", line 34, in top-level template code
-    <a href="{{ url_for('user_register') }}" class="btn btn-success">Register</a>
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1121, in url_for
-    return self.handle_url_build_error(error, endpoint, values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1110, in url_for
-    rv = url_adapter.build(  # type: ignore[union-attr]
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'user_register'. Did you mean 'register' instead?
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:08:55] "[35m[1mGET /home HTTP/1.1[0m" 500 -
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
-ERROR:app:Exception on /home [GET]
-Traceback (most recent call last):
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\controllers\usercontroller.py", line 19, in home
-    return render_template('userlogin.html')
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\templating.py", line 150, in render_template
-    return _render(app, template, context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\templating.py", line 131, in _render
-    rv = template.render(context)
-         ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
-    self.environment.handle_exception()
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "C:\Users\ASUS\Documents\Quiz Master\templates\userlogin.html", line 35, in top-level template code
-    <a href="{{ url_for('admin_home') }}" class="btn btn-secondary">Admin Login</a>
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1121, in url_for
-    return self.handle_url_build_error(error, endpoint, values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1110, in url_for
-    rv = url_adapter.build(  # type: ignore[union-attr]
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'admin_home'. Did you mean 'home' instead?
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:10:16] "[35m[1mGET /home HTTP/1.1[0m" 500 -
-ERROR:app:Exception on /home [GET]
-Traceback (most recent call last):
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\controllers\usercontroller.py", line 19, in home
-    return render_template('userlogin.html')
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\templating.py", line 150, in render_template
-    return _render(app, template, context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\templating.py", line 131, in _render
-    rv = template.render(context)
-         ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
-    self.environment.handle_exception()
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "C:\Users\ASUS\Documents\Quiz Master\templates\userlogin.html", line 35, in top-level template code
-    <a href="{{ url_for('admin_home') }}" class="btn btn-secondary">Admin Login</a>
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1121, in url_for
-    return self.handle_url_build_error(error, endpoint, values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1110, in url_for
-    rv = url_adapter.build(  # type: ignore[union-attr]
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'admin_home'. Did you mean 'home' instead?
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:10:17] "[35m[1mGET /home HTTP/1.1[0m" 500 -
-ERROR:app:Exception on /home [GET]
-Traceback (most recent call last):
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\controllers\usercontroller.py", line 19, in home
-    return render_template('userlogin.html')
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\templating.py", line 150, in render_template
-    return _render(app, template, context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\templating.py", line 131, in _render
-    rv = template.render(context)
-         ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
-    self.environment.handle_exception()
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "C:\Users\ASUS\Documents\Quiz Master\templates\userlogin.html", line 35, in top-level template code
-    <a href="{{ url_for('admin_home') }}" class="btn btn-secondary">Admin Login</a>
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1121, in url_for
-    return self.handle_url_build_error(error, endpoint, values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1110, in url_for
-    rv = url_adapter.build(  # type: ignore[union-attr]
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'admin_home'. Did you mean 'home' instead?
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:10:18] "[35m[1mGET /home HTTP/1.1[0m" 500 -
+INFO:root:Creating subject Physics
+INFO:root:Creating new subject Physics
+INFO:root:Fetching subject with name Physics
+INFO:root:Subject Physics fetched successfully
+ERROR:root:Error occured while creating subject: Subject name already exists
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 14:16:41] "[31m[1mPOST /v1/subjects/create HTTP/1.1[0m" 400 -
+INFO:root:Creating subject Linear Algebra
+INFO:root:Creating new subject Linear Algebra
+INFO:root:Fetching subject with name Linear Algebra
+INFO:root:Subject Linear Algebra created successfully
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 14:17:33] "[35m[1mPOST /v1/subjects/create HTTP/1.1[0m" 201 -
+INFO:root:Fetching subjects
+INFO:root:Fetching subjects
+ERROR:root:Error occured while fetching subjects: SubjectRepository.get_all_subjects() takes 0 positional arguments but 1 was given
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 14:19:04] "[35m[1mGET /v1/subjects HTTP/1.1[0m" 500 -
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:11:37] "GET /home HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:11:37] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-ERROR:app:Exception on /admin/home [GET]
-Traceback (most recent call last):
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\controllers\admincontroller.py", line 18, in admin_home
-    return render_template('adminlogin.html')
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\templating.py", line 150, in render_template
-    return _render(app, template, context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\templating.py", line 131, in _render
-    rv = template.render(context)
-         ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
-    self.environment.handle_exception()
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "C:\Users\ASUS\Documents\Quiz Master\templates\adminlogin.html", line 32, in top-level template code
-    <a href="{{ url_for('user_home') }}" class="btn btn-success">Back</a>
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1121, in url_for
-    return self.handle_url_build_error(error, endpoint, values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\flask\app.py", line 1110, in url_for
-    rv = url_adapter.build(  # type: ignore[union-attr]
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\ASUS\Documents\Quiz Master\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'user_home'. Did you mean 'user_login' instead?
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:11:39] "[35m[1mGET /admin/home HTTP/1.1[0m" 500 -
+INFO:root:Fetching subjects
+INFO:root:Fetching subjects
+INFO:root:Subjects fetched successfully
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 14:21:15] "[35m[1mGET /v1/subjects HTTP/1.1[0m" 500 -
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:15:21] "GET /home HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:15:21] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:15:23] "GET /admin/home HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:15:23] "GET /static/adminloginstyle.css HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:15:37] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
-INFO:root:Login request for admin 
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:15:42] "[31m[1mPOST /v1/admin/login HTTP/1.1[0m" 400 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:17:31] "[33mGET /home HTTP/1.1[0m" 404 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:17:31] "[33mGET /home HTTP/1.1[0m" 404 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:17:36] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:17:36] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:17:39] "GET /admin/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:17:39] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:17:40] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:17:40] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:17:42] "GET /admin/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:17:42] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:17:46] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:17:46] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:20:02] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:20:02] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:20:03] "GET /admin/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:20:04] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:20:06] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:20:06] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:root:Login request for user shrimay0987
-INFO:root:Check existence of username shrimay0987
-INFO:root:User shrimay0987 fetched successfully
-INFO:root:Fetching user shrimay0987 
-INFO:root:User shrimay0987 fetched successfully
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:20:14] "POST /v1/user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:20:23] "[31m[1mGET /v1/user/create HTTP/1.1[0m" 405 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:21:09] "[31m[1mGET /v1/user/create HTTP/1.1[0m" 405 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:21:11] "[31m[1mGET /v1/user/create HTTP/1.1[0m" 405 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:21:17] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:21:17] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:21:18] "GET /user/register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:21:19] "GET /static/registerstyle.css HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:21:23] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:21:23] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:21:24] "GET /user/register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:21:24] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:21:25] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:21:25] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:21:26] "GET /user/register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:21:26] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:21:27] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:21:27] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:35:15] "GET /admin/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:35:15] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:35:43] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:35:43] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:35:48] "GET /user/register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:35:48] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:35:53] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:35:53] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:35:57] "GET /user/register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:35:57] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:36:05] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:36:05] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:48:34] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:48:34] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:48:36] "GET /admin/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:48:36] "GET /static/adminloginstyle.css HTTP/1.1" 200 -
+INFO:root:Fetching subjects
+INFO:root:Fetching all subjects
+INFO:root:Subjects fetched successfully
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 14:25:59] "GET /v1/subjects HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 14:26:48] "GET /admin/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 14:26:48] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
 INFO:root:Login request for admin shri0987
 INFO:root:Fetching admin shri0987 
 INFO:root:Admin shri0987 fetched successfully
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:48:54] "POST /v1/admin/login HTTP/1.1" 200 -
-INFO:root:Login request for admin shri0987
-INFO:root:Fetching admin shri0987 
-INFO:root:Admin shri0987 fetched successfully
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:49:07] "[31m[1mPOST /v1/admin/login HTTP/1.1[0m" 400 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:50:27] "GET /admin/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:50:28] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:50:32] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:50:32] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:50:33] "GET /admin/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:50:33] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:51:31] "GET /admin/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:51:31] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:51:35] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:51:35] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:51:36] "GET /admin/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:51:36] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:52:04] "GET /admin/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:52:05] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:52:10] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:52:10] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:52:19] "GET /admin/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:52:19] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:52:22] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:52:22] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:52:23] "GET /user/register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:52:23] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:52:27] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:52:27] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:52:31] "GET /admin/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:52:31] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:52:47] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:52:47] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:55:33] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:55:33] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:root:Login request for user shrimay0987
-INFO:root:Check existence of username shrimay0987
-INFO:root:User shrimay0987 fetched successfully
-INFO:root:Fetching user shrimay0987 
-INFO:root:User shrimay0987 fetched successfully
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:55:38] "POST /v1/user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:58:42] "GET /admin/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:58:42] "GET /static/adminloginstyle.css HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:58:45] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 21:58:45] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:root:Login request for user shrimay0987
-INFO:root:Check existence of username shrimay0987
-INFO:root:User shrimay0987 fetched successfully
-INFO:root:Fetching user shrimay0987 
-INFO:root:User shrimay0987 fetched successfully
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 22:00:30] "[31m[1mPOST /v1/user/login HTTP/1.1[0m" 400 -
-INFO:root:Login request for user shrimay0987
-INFO:root:Check existence of username shrimay0987
-INFO:root:User shrimay0987 fetched successfully
-INFO:root:Fetching user shrimay0987 
-INFO:root:User shrimay0987 fetched successfully
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 22:00:36] "POST /v1/user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 22:00:49] "GET /admin/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 22:00:49] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 22:00:51] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 22:00:51] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 22:00:53] "GET /user/register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 22:00:53] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 22:01:02] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 22:01:02] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 22:01:03] "GET /user/register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 22:01:03] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 22:01:05] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 22:01:05] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 22:01:06] "GET /admin/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 22:01:07] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 22:01:09] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 22:01:09] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 22:01:11] "GET /user/register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 22:01:11] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 22:01:19] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 22:01:19] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 22:02:01] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 22:02:02] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 22:02:26] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 22:02:26] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 22:02:28] "GET /admin/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 22:02:28] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 22:05:04] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [28/Feb/2025 22:05:04] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:14:09] "GET /user/register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:14:09] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:14:12] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:14:12] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:14:13] "GET /admin/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:14:13] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:14:17] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:14:17] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:28:09] "GET /admin/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:28:09] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:28:11] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:28:11] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:28:14] "GET /user/register HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:28:14] "[36mGET /static/registerstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:31:17] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:31:17] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:31:19] "GET /admin/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:31:19] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:33:01] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:33:01] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:36:43] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:36:43] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:36:44] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:36:44] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:36:46] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:36:46] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:37:41] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:37:41] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:38:14] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:38:14] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:38:16] "GET /admin/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:38:16] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:38:22] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:38:23] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:38:43] "GET /admin/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:38:43] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:58:59] "GET /admin/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:58:59] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:59:01] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:59:01] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:59:02] "GET /admin/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:59:02] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 00:59:13] "[33mGET /admin/dashboard/shri0987 HTTP/1.1[0m" 404 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:00:11] "[33mGET /admin/dashboard/shri0987 HTTP/1.1[0m" 404 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:01:44] "[33mGET /admin/dashboard/shri0987 HTTP/1.1[0m" 404 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:01:45] "[33mGET /admin/dashboard/shri0987 HTTP/1.1[0m" 404 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:01:52] "GET /admin/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:01:52] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
-INFO:root:Login request for admin shri0987
-INFO:root:Fetching admin shri0987 
-INFO:root:Admin shri0987 fetched successfully
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:02:05] "[31m[1mPOST /v1/admin/login HTTP/1.1[0m" 400 -
-INFO:root:Login request for admin shri0987
-INFO:root:Fetching admin shri0987 
-INFO:root:Admin shri0987 fetched successfully
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:02:27] "[31m[1mPOST /v1/admin/login HTTP/1.1[0m" 400 -
-INFO:root:Login request for admin shri0987
-INFO:root:Fetching admin shri0987 
-INFO:root:Admin shri0987 fetched successfully
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:03:12] "POST /v1/admin/login HTTP/1.1" 200 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:04:51] "GET /admin/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:04:51] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
-INFO:root:Login request for admin shri0987
-INFO:root:Fetching admin shri0987 
-INFO:root:Admin shri0987 fetched successfully
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:04:59] "POST /v1/admin/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:05:02] "GET /admin/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:05:02] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:06:37] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:06:37] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:07:47] "[33mGET /home HTTP/1.1[0m" 404 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:07:53] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:07:53] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:07:55] "GET /admin/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:07:55] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
-INFO:root:Login request for admin 
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:07:58] "[31m[1mPOST /v1/admin/login HTTP/1.1[0m" 400 -
-INFO:root:Login request for admin shri0987
-INFO:root:Fetching admin shri0987 
-INFO:root:Admin shri0987 fetched successfully
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:08:08] "[32mPOST /v1/admin/login HTTP/1.1[0m" 302 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:08:08] "[35m[1mGET /admin/dashboard/shri0987 HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 14:26:57] "[32mPOST /v1/admin/login HTTP/1.1[0m" 302 -
+INFO:root:Admin dashboard request for shri0987
+INFO:root:Fetching subjects
+INFO:root:Fetching all subjects
+INFO:root:Subjects fetched successfully
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 14:26:57] "GET /v1/subjects HTTP/1.1" 200 -
+INFO:root:Subjects fetched for admin dashboard <Response [200]>
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 14:26:57] "GET /admin/dashboard/shri0987 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 14:26:57] "[36mGET /static/admindashboardstyle.css HTTP/1.1[0m" 304 -
 INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 INFO:werkzeug:[33mPress CTRL+C to quit[0m
 INFO:root:Admin dashboard request for shri0987
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:09:43] "[32mGET /admin/dashboard/shri0987 HTTP/1.1[0m" 302 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:09:43] "GET /admin/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:09:43] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 14:27:57] "[32mGET /admin/dashboard/shri0987 HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 14:27:57] "GET /admin/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 14:27:57] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
 INFO:root:Login request for admin shri0987
 INFO:root:Fetching admin shri0987 
 INFO:root:Admin shri0987 fetched successfully
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:09:54] "[32mPOST /v1/admin/login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 14:28:04] "[32mPOST /v1/admin/login HTTP/1.1[0m" 302 -
 INFO:root:Admin dashboard request for shri0987
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:09:54] "[35m[1mGET /admin/dashboard/shri0987 HTTP/1.1[0m" 500 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:11:10] "GET /admin/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:11:10] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
-INFO:root:Login request for admin shri0987
-INFO:root:Fetching admin shri0987 
-INFO:root:Admin shri0987 fetched successfully
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:11:17] "[32mPOST /v1/admin/login HTTP/1.1[0m" 302 -
-INFO:root:Admin dashboard request for shri0987
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:11:17] "[35m[1mGET /admin/dashboard/shri0987 HTTP/1.1[0m" 500 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:13:02] "GET /admin/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:13:02] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
-INFO:root:Login request for admin shri0987
-INFO:root:Fetching admin shri0987 
-INFO:root:Admin shri0987 fetched successfully
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:13:12] "[32mPOST /v1/admin/login HTTP/1.1[0m" 302 -
-INFO:root:Admin dashboard request for shri0987
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:13:12] "[35m[1mGET /admin/dashboard/shri0987 HTTP/1.1[0m" 500 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:15:16] "GET /admin/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:15:16] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
-INFO:root:Login request for admin shri0987
-INFO:root:Fetching admin shri0987 
-INFO:root:Admin shri0987 fetched successfully
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:15:23] "[32mPOST /v1/admin/login HTTP/1.1[0m" 302 -
-INFO:root:Admin dashboard request for shri0987
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:15:23] "GET /admin/dashboard/shri0987 HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:15:23] "GET /static/adminhomestyle.css HTTP/1.1" 200 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:root:Admin dashboard request for shri0987
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:16:29] "[32mGET /admin/dashboard/shri0987 HTTP/1.1[0m" 302 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:16:29] "GET /admin/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:16:29] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
-INFO:root:Login request for admin shri0987
-INFO:root:Fetching admin shri0987 
-INFO:root:Admin shri0987 fetched successfully
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:16:38] "[32mPOST /v1/admin/login HTTP/1.1[0m" 302 -
-INFO:root:Admin dashboard request for shri0987
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:16:38] "GET /admin/dashboard/shri0987 HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:16:38] "[36mGET /static/adminhomestyle.css HTTP/1.1[0m" 304 -
-INFO:root:Admin dashboard request for shri0987
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:16:46] "GET /admin/dashboard/shri0987 HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:16:46] "[36mGET /static/adminhomestyle.css HTTP/1.1[0m" 304 -
-INFO:root:Admin dashboard request for shri0987
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:16:46] "GET /admin/dashboard/shri0987 HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:16:46] "[36mGET /static/adminhomestyle.css HTTP/1.1[0m" 304 -
-INFO:root:Login request for admin shri0987
-INFO:root:Fetching admin shri0987 
-INFO:root:Admin shri0987 fetched successfully
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:16:50] "[32mPOST /v1/admin/login HTTP/1.1[0m" 302 -
-INFO:root:Admin dashboard request for shri0987
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:16:50] "GET /admin/dashboard/shri0987 HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:16:50] "[36mGET /static/adminhomestyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:18:38] "[36mGET /static/adminhomestyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:18:42] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
-INFO:root:Login request for admin shri0987
-INFO:root:Fetching admin shri0987 
-INFO:root:Admin shri0987 fetched successfully
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:18:46] "[32mPOST /v1/admin/login HTTP/1.1[0m" 302 -
-INFO:root:Admin dashboard request for shri0987
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:18:46] "GET /admin/dashboard/shri0987 HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:18:46] "[36mGET /static/adminhomestyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:19:24] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:19:24] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:root:Login request for user shri0987
-INFO:root:Check existence of username shri0987
-ERROR:root:Exception occured while fetching user: User not found
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:19:34] "[33mPOST /v1/user/login HTTP/1.1[0m" 404 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:20:01] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:20:06] "GET /admin/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:20:06] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
-INFO:root:Login request for admin shri0987
-INFO:root:Fetching admin shri0987 
-INFO:root:Admin shri0987 fetched successfully
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:20:14] "[32mPOST /v1/admin/login HTTP/1.1[0m" 302 -
-INFO:root:Admin dashboard request for shri0987
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:20:14] "GET /admin/dashboard/shri0987 HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:20:14] "[36mGET /static/adminhomestyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:25:20] "GET /admin/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:25:20] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
-INFO:root:Login request for admin shri0987
-INFO:root:Fetching admin shri0987 
-INFO:root:Admin shri0987 fetched successfully
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:25:32] "[32mPOST /v1/admin/login HTTP/1.1[0m" 302 -
-INFO:root:Admin dashboard request for shri0987
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:25:32] "GET /admin/dashboard/shri0987 HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:25:32] "[36mGET /static/adminhomestyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-INFO:werkzeug:[33mPress CTRL+C to quit[0m
-INFO:root:Admin dashboard request for shri0987
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:42:11] "GET /admin/dashboard/shri0987 HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:42:11] "[36mGET /static/adminhomestyle.css HTTP/1.1[0m" 304 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:42:14] "GET /user/login HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 01:42:14] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Fetching subjects
+INFO:root:Fetching all subjects
+INFO:root:Subjects fetched successfully
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 14:28:04] "GET /v1/subjects HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Mar/2025 14:28:04] "[35m[1mGET /admin/dashboard/shri0987 HTTP/1.1[0m" 500 -

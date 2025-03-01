@@ -6,6 +6,8 @@ class AppError(Exception):
     INTERNAL_SERVER_ERROR = ('E1004', 500)
     USER_EXISTS = ('E1005', 400)
     USER_NOT_FOUND = ('E1006', 404)
+    SUBJECTS_NOT_FOUND = ('E1007', 404)
+    SUBJECT_EXISTS = ('E1008', 400)
 
     def __init__(self, error_message, error_code_tuple):
         super().__init__(error_message)

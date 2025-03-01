@@ -35,9 +35,9 @@ class UserController:
                 if len(username) == 0 or username is None or len(password) == 0 or password is None:
                     raise AppError("Invalid request", AppError.INVALID_REQUEST)
                 
-                isSuccess = self.user_service.user_login(username, password)
+                is_login_success = self.user_service.user_login(username, password)
 
-                if not isSuccess:
+                if not is_login_success:
                     raise AppError("Invalid credentials", AppError.INVALID_CREDENTIALS)
                     
                 response = {"message": "Login successful"}

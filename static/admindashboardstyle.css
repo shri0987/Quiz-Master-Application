@@ -1,0 +1,27 @@
+body {
+    background-color: #f0f5f9;
+    font-family: 'Poppins', sans-serif;
+}
+.dashboard-header {
+    background-color: #d0e7ff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.subject-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.section-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.add-button {
+    cursor: pointer;
+    font-size: 20px;
+    color: #007bff;
+    font-weight: bold;
+}

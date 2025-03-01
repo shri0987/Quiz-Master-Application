@@ -1,8 +1,9 @@
 import logging
-from flask import flash, redirect, render_template, request, jsonify, session, url_for
+import requests
 from common.error import AppError
 from models.admin import Admin, db
 from services.adminservice import AdminService
+from flask import flash, redirect, render_template, request, jsonify, session, url_for
 
 class AdminController:
 
@@ -21,14 +22,16 @@ class AdminController:
         @self.app.route('/admin/dashboard/<username>', methods=['GET'])
         def admin_dashboard(username):
             try:
-                logging.info(f'Admin dashboard request for {username}')
+                logging.info(f'Admin dashboard request for {username}') 
                 if 'admin_user' not in session or session['admin_user'] != username:
                     flash("Login required", "error")
                     return redirect(url_for('admin_home'))
-            
-                # call other APIs here and pass data to template
 
-                return render_template('admindashboard.html', username=username)
+                base_url = self.app.config['URL']
+                subjects = requests.get(f'{base_url}/v1/subjects')
+                logging.info(f'Subjects fetched for admin dashboard {jsonify(subjects)}')
+
+                return render_template('admindashboard.html', username=username, subjects = subjects)
             
             except AppError as e:
                 return jsonify(e.to_dict()), e.status_code
@@ -51,9 +54,9 @@ class AdminController:
                 if not username or not password:
                     raise AppError("Invalid request", AppError.INVALID_REQUEST)
                 
-                isSuccess = self.admin_service.admin_login(username, password)
+                is_login_success = self.admin_service.admin_login(username, password)
 
-                if not isSuccess:
+                if not is_login_success:
                     raise AppError("Invalid credentials", AppError.INVALID_CREDENTIALS)
                 
                 session['admin_user'] = username
