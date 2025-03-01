@@ -3,7 +3,6 @@ from repository.database import db
 
 class Subject(db.Model):
     __tablename__ = 'subjects'
-
     subjectId = db.Column(db.String, primary_key=True, nullable=False)
     subjectName = db.Column(db.String(100), nullable=False, unique=True)
     description = db.Column(db.String(500))

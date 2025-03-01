@@ -1,6 +1,7 @@
 import logging
 import requests
 from common.error import AppError
+from common.utility import Utility
 from models.admin import Admin, db
 from services.adminservice import AdminService
 from flask import flash, redirect, render_template, request, jsonify, session, url_for
@@ -10,6 +11,7 @@ class AdminController:
     def __init__(self,app):
         self.app = app
         self.admin_service = AdminService()
+        self.utility = Utility()
         self.admin_routes()
 
     def admin_routes(self):
@@ -23,15 +25,16 @@ class AdminController:
         def admin_dashboard(username):
             try:
                 logging.info(f'Admin dashboard request for {username}') 
-                if 'admin_user' not in session or session['admin_user'] != username:
-                    flash("Login required", "error")
-                    return redirect(url_for('admin_home'))
 
-                base_url = self.app.config['URL']
-                subjects = requests.get(f'{base_url}/v1/subjects')
-                logging.info(f'Subjects fetched for admin dashboard {jsonify(subjects)}')
+                base_url = self.app.config["URL"]
+                response = requests.get(f'{base_url}/v1/subjects')
 
-                return render_template('admindashboard.html', username=username, subjects = subjects)
+                if response.status_code != 200:
+                    logging.error(f"Failed to fetch subject: {response.text}")
+                    return f"Error fetching subject: {response.text}", response.status_code
+                
+                subject_data = response.json()
+                return render_template('admindashboard.html', username=username, subjects = subject_data)
             
             except AppError as e:
                 return jsonify(e.to_dict()), e.status_code
@@ -62,16 +65,17 @@ class AdminController:
                 session['admin_user'] = username
                 session['is_admin_logged_in'] = True
             
-                return redirect(url_for('admin_dashboard', username=username))
+                return redirect(url_for('admin_dashboard', username = username))
             
             except AppError as e:
-                return jsonify(e.to_dict()), e.status_code
-            
+                error_details = e.to_dict()
+                return render_template('adminlogin.html', error_message = error_details["error"]), e.status_code
+
             except TimeoutError as e:
-                return jsonify({"error": f"Timeout error occurred while processing admin login request {e}"}), 504
+                return render_template('adminlogin.html', error_message = "Operation Timed out"), 504
 
             except Exception as e:
-                return jsonify({"error": f"Error occurred while processing admin login request {e}"}), 500
+                return render_template('adminlogin.html', error_message = "Error occurred while processing admin login request"), 500
             
         
        

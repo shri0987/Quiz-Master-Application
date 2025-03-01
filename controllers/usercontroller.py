@@ -44,13 +44,14 @@ class UserController:
                 return response, 200
             
             except AppError as e:
-                return jsonify(e.to_dict()), e.status_code
-            
+                error_details = e.to_dict()
+                return render_template('userlogin.html', error_message = error_details["error"]), e.status_code
+
             except TimeoutError as e:
-                return jsonify({"error": "Timeout error occurred while processing login request"}), 504
+                return render_template('userlogin.html', error_message = "Operation Timed out"), 504
 
             except Exception as e:
-                return jsonify({"error": f"Error occurred while processing login request"}), 500
+                return render_template('userlogin.html', error_message = "Error occurred while processing login request"), 500
             
 
         @self.app.route('/v1/user/create', methods=['POST'])
@@ -73,10 +74,11 @@ class UserController:
                 return render_template('userlogin.html', message = "User created successfully"), 201
                 
             except AppError as e:
-                return jsonify(e.to_dict()), e.status_code
+                error_details = e.to_dict()
+                return render_template('usercreate.html', error_message = error_details["error"]), e.status_code
               
-            except TimeoutError as e:      
-                return jsonify({"error": "Timeout error occurred while processing user creation request"}), 504
+            except TimeoutError as e:    
+                return render_template('usercreate.html', error_message = "Operation Timed out"), 504
 
             except Exception as e:
-                return jsonify({"error": "Error occurred while processing user creation request"}), 500
+                return render_template('usercreate.html', error_message = "Error occurred while processing user create request"), 500

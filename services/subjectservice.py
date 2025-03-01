@@ -59,7 +59,7 @@ class SubjectService:
             if not self.is_valid_subject_id(subject_id):
                 raise AppError("Invalid subject id", AppError.INVALID_REQUEST)
 
-            subject = self.subject_repository.get_subject_by_id(subject_id)
+            subject = self.subject_repository.get_subject_by_id(subject_id).to_dict()
             return subject
         
         except Exception as e:
