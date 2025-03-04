@@ -13,7 +13,7 @@
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="{{ url_for('admin_dashboard', username = username) }}">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Quiz</a>
@@ -36,22 +36,26 @@
         <div class="row">
             {% for subject in subjects %}
             <div class="col-md-3 mb-4">
-                <div class="card shadow-sm">
+                <div class="card shadow-sm position-relative">
                     <div class="card-body">
-                        <h5 class="card-title font-weight-bold">{{ subject.subjectName }}</h5>
+                        <div class="d-flex justify-content-between align-items-start">
+                            <h5 class="card-title font-weight-bold">{{ subject.subjectName }}</h5>                        
+                        </div>
+                        <h5>{{ subject.subjectId }}</h5>
+                        <br>
                         <p class="card-text">{{ subject.description }}</p>
                     </div>
                     <div class="card-footer bg-white border-0">
-                        <a href="{{ url_for('get_subject_page', subject_id = subject.subjectId) }}"
-                            class="btn btn-success">View Subject</a>
+                        <a href="{{ url_for('get_subject_page', subject_id = subject.subjectId) }}">
+                            <img src="{{ url_for('static', filename='next.png') }}" width="40px" height="40px"></a>
                     </div>
                 </div>
             </div>
             {% endfor %}
         </div>
+        <br>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

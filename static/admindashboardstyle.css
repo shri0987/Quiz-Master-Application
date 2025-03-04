@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+    min-height: 250px;
 }
 .card-body {
     flex-grow: 1;
@@ -40,3 +41,9 @@
     color: #333;
 }
 
+.add-subject-card {
+    border: 2px dashed #888;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    height: 200px; 
+}

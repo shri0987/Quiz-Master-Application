@@ -2,8 +2,8 @@ from repository.database import db
 
 class Chapter(db.Model):
     __tablename__ = 'chapters'
-    chapterId = db.Column(db.String, primary_key=True, nullable=False)
-    subjectId = db.Column(db.String, db.ForeignKey('subjects.subjectId', ondelete='CASCADE'), nullable=False)
+    chapterId = db.Column(db.String(100), primary_key=True, nullable=False)
+    subjectId = db.Column(db.String(100), db.ForeignKey('subjects.subjectId', ondelete='CASCADE'), nullable=False)
     chapterName = db.Column(db.String(100), nullable=False)
     description = db.Column(db.String(500))
 

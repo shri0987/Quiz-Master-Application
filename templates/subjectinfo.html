@@ -1,6 +1,62 @@
-<html>
-    <body>
-        <p>{{ subject.subjectName }}</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Quiz Master | Subject Page</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/admindashboardstyle.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg shadow-sm">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Quiz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Summary</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <br>
+        <h2>{{ subject.subjectName }}</h2>
+        <br>
+        <br>
         <p>{{ subject.description }}</p>
-    </body>
+        <br>
+        <br>
+        <div class="row">
+            {% for chapter in chapters %}
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title font-weight-bold">{{ chapter.chapterName }}</h5>
+                        <p class="card-text">Total Questions - {{ chapter.questionCount }}</p>
+                    </div>
+                    <div class="card-footer bg-white border-0">
+                        <a href="#"
+                            class="btn btn-success">View chapter</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+ 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+
 </html>

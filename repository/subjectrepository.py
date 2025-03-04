@@ -59,8 +59,10 @@ class SubjectRepository:
             cursor = conn.cursor()
             cursor.execute("SELECT * FROM subjects WHERE subjectId = ?", (subject_id,))
             result = cursor.fetchone()
+
             if result is None:
                 return None
+            
             subject = Subject(*result)
             logging.info("Subject %s fetched successfully", subject_id)
             return subject
@@ -83,8 +85,10 @@ class SubjectRepository:
             cursor = conn.cursor()
             cursor.execute("SELECT * FROM subjects WHERE subjectName = ?", (name,))
             result = cursor.fetchone()
+
             if result is None:
                 return None
+            
             subject = Subject(*result)
             logging.info("Subject %s fetched successfully", name)
             return subject
@@ -97,5 +101,31 @@ class SubjectRepository:
             logging.error("Error occured in fetch subject using name : %s", e)
             raise Exception("Error occured in fetch subject")
         
+        finally:
+            conn.close()
+
+    
+    def delete_subject(self, subject_id) -> str:
+        try:
+            conn = sqlite3.connect('instance/quizmasterapp.db')
+            cursor = conn.cursor()
+            cursor.execute("DELETE FROM subjects WHERE subjectId = ?", (subject_id,))
+
+            if cursor.rowcount == 0:
+                logging.error("No subject found with id: %s", subject_id)
+                return None
+            conn.commit()
+
+            logging.info("Subject %s deleted successfully", subject_id)
+            return subject_id
+
+        except sqlite3.Error as e:
+            logging.error("Database error in delete subject using name: %s", e)
+            raise Exception("Database error occurred while executing SQL query")
+
+        except Exception as e:
+            logging.error("Error occurred in delete subject using name: %s", e)
+            raise Exception("Error occurred in delete subject")
+
         finally:
             conn.close()

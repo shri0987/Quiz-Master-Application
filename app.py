@@ -10,6 +10,9 @@ from models.admin import Admin
 from models.user import User
 from models.subject import Subject
 from models.chapter import Chapter
+from models.question import Question
+from models.quiz import Quiz
+from models.score import Score
 from repository.database import db, migrate
 from controllers.usercontroller import UserController
 from controllers.admincontroller import AdminController

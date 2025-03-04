@@ -17,6 +17,7 @@ class SubjectService:
     def __init__(self):
         self.subject_repository = SubjectRepository()
         self.utility = Utility()
+        
 
     def generate_subject_id(self, subject_name) -> str:
         prefix = subject_name[:3].upper()
@@ -26,6 +27,7 @@ class SubjectService:
         subject_id = f"{prefix}{random_number}"
         return subject_id
     
+    
     def is_valid_subject_id(self, subject_id) -> bool:
         if not subject_id:
             return False
@@ -34,6 +36,7 @@ class SubjectService:
         if not re.match("^[A-Z]{3}[0-9]{4}$", subject_id):
             return False
         return True
+    
 
     def get_all_subjects(self) -> list:
         try:
@@ -48,6 +51,7 @@ class SubjectService:
         except Exception as e:
             logging.error("Error occured while fetching subjects: %s", e)
             raise
+
 
     def get_subject_by_id(self, subject_id) -> Subject:
         try:
@@ -65,6 +69,7 @@ class SubjectService:
         except Exception as e:
             logging.error("Error occured while fetching subject: %s", e)
             raise
+        
 
     def is_existing_subject(self, name) -> bool:
         try:
@@ -109,4 +114,29 @@ class SubjectService:
 
         except Exception as e:
             logging.error("Error occured while creating subject: %s", e)
+            raise
+
+    
+    def delete_subject(self, subject_id) -> str:
+        try:
+            logging.info("Deleting subject %s", subject_id)
+
+            if not subject_id:
+                raise AppError("Invalid request", AppError.INVALID_REQUEST)
+            
+            if not self.is_valid_subject_id(subject_id):
+                raise AppError("Invalid subject id", AppError.INVALID_REQUEST)
+            
+            deleted_subject = self.subject_repository.delete_subject(subject_id)
+
+            if deleted_subject is None:
+                return None
+            return deleted_subject
+            
+        except AppError as e:
+            logging.error("Error occured while deleting subject: %s", e)
+            raise
+
+        except Exception as e:
+            logging.error("Error occured while deleting subject: %s", e)
             raise
