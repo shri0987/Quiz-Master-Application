@@ -116,6 +116,38 @@ class SubjectService:
             logging.error("Error occured while creating subject: %s", e)
             raise
 
+    def update_subject(self, id, name, description):
+        try:
+            logging.info("Creating new subject %s", name)
+
+            existing_subject = self.get_subject_by_id(id)
+
+            logging.info(f'subject {jsonify(existing_subject)}')
+
+            if existing_subject is None:
+                raise AppError("Subject does not exist", AppError.SUBJECTS_NOT_FOUND)
+            
+            id = existing_subject['subjectId']
+            name = existing_subject['subjectName']
+            description = description
+            created_on = existing_subject['createdOn']
+
+            subject = Subject(id, name, description, created_on)
+
+            updated_subject = self.subject_repository.update_subject(subject)
+
+            if updated_subject is None:
+                return None
+            return updated_subject
+        
+        except AppError as e:
+            logging.error("Error occured while creating subject: %s", e)
+            raise
+
+        except Exception as e:
+            logging.error("Error occured while creating subject: %s", e)
+            raise
+
     
     def delete_subject(self, subject_id) -> str:
         try:
@@ -127,6 +159,9 @@ class SubjectService:
             if not self.is_valid_subject_id(subject_id):
                 raise AppError("Invalid subject id", AppError.INVALID_REQUEST)
             
+            if self.get_subject_by_id(subject_id) is None:
+                raise AppError("Subject does not exist", AppError.SUBJECTS_NOT_FOUND)
+
             deleted_subject = self.subject_repository.delete_subject(subject_id)
 
             if deleted_subject is None:

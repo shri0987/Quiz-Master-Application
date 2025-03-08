@@ -24,6 +24,7 @@ class AdminController:
         @self.app.route('/admin/dashboard/<username>', methods=['GET'])
         def admin_dashboard(username):
             try:
+                logging.info(f'Admin dashboard request for session {session.get('admin_user')}') 
                 logging.info(f'Admin dashboard request for {username}') 
 
                 base_url = self.app.config["URL"]

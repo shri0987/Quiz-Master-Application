@@ -104,7 +104,33 @@ class SubjectRepository:
         finally:
             conn.close()
 
-    
+    def update_subject(self, subject) -> Subject:
+        try:
+            conn = sqlite3.connect('instance/quizmasterapp.db')
+            cursor = conn.cursor()
+            cursor.execute("UPDATE subjects SET subjectName = ?, description = ?, createdOn = ? WHERE subjectId = ?",
+                          (subject.subjectName, subject.description, subject.createdOn, subject.subjectId))
+            conn.commit()
+
+            if cursor.rowcount == 0:
+                logging.warning("No subject found with subjectId %s", subject.subjectId)
+                raise Exception(f"No subject found with subjectId {subject.subjectId}")
+
+            logging.info("Subject %s updated successfully", subject.subjectId)
+            return subject
+
+        except sqlite3.Error as e:
+            logging.error("Database error occurred in update subject: %s", e)
+            raise Exception("Database error occurred while executing SQL query")
+
+        except Exception as e:
+            logging.error("Error occurred in update subject: %s", e)
+            raise Exception("Error occurred in update subject")
+
+        finally:
+            conn.close()
+
+
     def delete_subject(self, subject_id) -> str:
         try:
             conn = sqlite3.connect('instance/quizmasterapp.db')

@@ -8,6 +8,7 @@ class AppError(Exception):
     USER_NOT_FOUND = ('E1006', 404)
     SUBJECTS_NOT_FOUND = ('E1007', 404)
     SUBJECT_EXISTS = ('E1008', 400)
+    UNAUTHORIZED = ('E1009', 403)
 
     def __init__(self, error_message, error_code_tuple):
         super().__init__(error_message)

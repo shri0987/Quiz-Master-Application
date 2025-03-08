@@ -3,7 +3,7 @@ import requests
 from common.error import AppError
 from models.admin import Admin, db
 from services.subjectservice import SubjectService
-from flask import redirect, render_template, request, jsonify, url_for
+from flask import redirect, render_template, request, jsonify, session, url_for
 
 class SubjectController:
 
@@ -31,9 +31,9 @@ class SubjectController:
 
                 subject_data = response.json()
                 chapters = [
-                    {"chapterId": 1, "chapterName": "Chapter 1 - Motion", "questionCount": 12},
-                    {"chapterId": 2, "chapterName": "Chapter 2 - Forces", "questionCount": 15},
-                    {"chapterId": 3, "chapterName": "Chapter 3 - Gravitation", "questionCount": 18}
+                    {"chapterId": 1, "chapterName": "Motion", "questionCount": 12},
+                    {"chapterId": 2, "chapterName": "Forces", "questionCount": 15},
+                    {"chapterId": 3, "chapterName": "Gravitation", "questionCount": 18}
                 ]
 
                 return render_template('subjectinfo.html', subject=subject_data, chapters = chapters)
@@ -45,6 +45,50 @@ class SubjectController:
             except Exception as e:
                 logging.error(f"Unexpected error: {e}", exc_info=True)
                 return "An error occurred while fetching the subject page", 500
+            
+
+        @self.app.route('/subjects/<subject_id>/info', methods=['GET'])
+        def get_subject_info_page(subject_id):
+            try:
+                logging.info(f'Subject page request for {subject_id}') 
+
+                base_url = self.app.config.get("URL")
+                if not base_url:
+                    raise RuntimeError("Base URL is not set in app config")
+
+                response = requests.get(f'{base_url}/v1/subjects/{subject_id}')
+                
+                if response.status_code != 200:
+                    logging.error(f"Failed to fetch subject: {response.text}")
+                    return f"Error fetching subject: {response.text}", response.status_code
+
+                subject_data = response.json()
+
+                return render_template('subjectdetails.html', subject = subject_data)
+
+            except TimeoutError as e:
+                logging.error(f"Timeout occurred: {e}", exc_info=True)
+                return "Operation timed out", 504
+
+            except Exception as e:
+                logging.error(f"Unexpected error: {e}", exc_info=True)
+                return "An error occurred while fetching the subject info page", 500
+
+
+        @self.app.route('/subjects/create', methods=['GET'])
+        def get_subject_create_page():
+            try:
+                return render_template('createsubject.html')
+            
+            except AppError as e:
+                error_details = e.to_dict()
+                return render_template('admindashboard.html', error_message = error_details["error"]), e.status_code
+            
+            except TimeoutError as e:
+                return render_template('admindashboard.html', error_message = "Operation Timed out"), 504
+            
+            except Exception as e:
+                return render_template('admindashboard.html', error_message = "Error occured while processing create request"), 500
 
 
         @self.app.route('/v1/subjects', methods=['GET'])
@@ -67,7 +111,7 @@ class SubjectController:
             
             except Exception as e:
                 return jsonify({"error": f"Error occurred while processing subjects request {e}"}), 500
-            
+              
             
         @self.app.route('/v1/subjects/<subject_id>', methods=['GET'])
         def get_subject_by_id(subject_id):
@@ -96,8 +140,9 @@ class SubjectController:
             try:
                 name = request.form.get('name')
                 description = request.form.get('description')
+                username = session.get('admin_user')
 
-                logging.info(f'Start creating subject named {name}')
+                logging.info(f'Create subject {name} request by {username}')
 
                 if not name or not description:
                     raise AppError("Invalid request", AppError.INVALID_REQUEST)
@@ -107,21 +152,58 @@ class SubjectController:
                 if subject is None:
                     raise AppError("Error occurred while creating subject", AppError.INTERNAL_SERVER_ERROR)
                 
-                return jsonify({"message": "Subject created successfully"}), 201
+                return redirect(url_for('admin_dashboard', username=username))
             
             except AppError as e:
-                return jsonify(e.to_dict()), e.status_code
+                error_details = e.to_dict()
+                return render_template('createsubject.html', error_message = error_details["error"]), e.status_code
             
             except TimeoutError as e:
-                return jsonify({"error": f"Timeout error occurred while processing create subject request {e}"}), 504
+                return render_template('createsubject.html', error_message = "Operation Timed out"), 504
             
             except Exception as e:
-                return jsonify({"error": f"Error occurred while processing create subject request {e}"}), 500
+                return render_template('createsubject.html', error_message = "Error occured while processing create request"), 500
+
+
+        @self.app.route('/v1/subject/update', methods=['POST'])
+        def update_subject():
+            try:
+                id = request.form.get('id')
+                name = request.form.get('name')
+                description = request.form.get('description')
+                username = session.get('admin_user')
+                if not username:
+                    logging.info(f'session expired')
+                    return redirect(url_for('admin_home'))
+
+                logging.info(f'Start updating subject named {name} and id {id}')
+
+                if not name or not description:
+                    raise AppError("Invalid request", AppError.INVALID_REQUEST)
+                
+                subject = self.subject_service.update_subject(id, name, description)
+
+                if subject is None:
+                    raise AppError("Error occurred while creating subject", AppError.INTERNAL_SERVER_ERROR)
+    
+                return redirect(url_for('get_subject_page', subject_id=id))
+            
+            except AppError as e:
+                error_details = e.to_dict()
+                return render_template('subjectdetails.html', error_message = error_details["error"]), e.status_code
+            
+            except TimeoutError as e:
+                return render_template('subjectdetails.html', error_message = "Operation Timed out"), 504
+            
+            except Exception as e:
+                return render_template('subjectdetails.html', error_message = "Error occured while processing update request"), 500
+
 
         @self.app.route('/v1/subjects/delete/<subject_id>', methods = ['POST'])
         def delete_subject(subject_id):
+            subject = None
             try:
-                username = request.args.get('username')
+                username = session.get('admin_user')
                 if not username:
                     raise AppError("Username is required", AppError.INVALID_REQUEST)
                 
@@ -135,23 +217,16 @@ class SubjectController:
                 if subject is None:
                     raise AppError("Error occurred while deleting subject", AppError.INTERNAL_SERVER_ERROR)
                 
-                base_url = self.app.config["URL"]
-                response = requests.get(f'{base_url}/v1/subjects')
-
-                if response.status_code != 200:
-                    logging.error(f"Failed to fetch subject: {response.text}")
-                    return f"Error fetching subject: {response.text}", response.status_code
-                
-                subject_data = response.json()
-                return render_template('admindashboard.html', username=username, subjects=subject_data)
+                return redirect(url_for('admin_dashboard', username=username))
             
             except AppError as e:
-                return jsonify(e.to_dict()), e.status_code
+                error_details = e.to_dict()
+                return render_template('subjectdetails.html', error_message = error_details["error"], subject = subject), e.status_code
             
             except TimeoutError as e:
-                return jsonify({"error": f"Timeout error occurred while processing delete subject request {e}"}), 504
+                return render_template('subjectdetails.html', error_message = "Operation Timed out", subject = subject), 504
             
             except Exception as e:
-                return jsonify({"error": f"Error occurred while processing delete subject request {e}"}), 500
-            
+                return render_template('subjectdetails.html', error_message = "Error occured while processing delete request", subject = subject), 500
+
         
