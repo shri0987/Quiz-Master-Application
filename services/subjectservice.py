@@ -116,6 +116,7 @@ class SubjectService:
             logging.error("Error occured while creating subject: %s", e)
             raise
 
+
     def update_subject(self, id, name, description):
         try:
             logging.info("Creating new subject %s", name)
@@ -141,11 +142,11 @@ class SubjectService:
             return updated_subject
         
         except AppError as e:
-            logging.error("Error occured while creating subject: %s", e)
+            logging.error("Error occured while updating subject: %s", e)
             raise
 
         except Exception as e:
-            logging.error("Error occured while creating subject: %s", e)
+            logging.error("Error occured while updating subject: %s", e)
             raise
 
     

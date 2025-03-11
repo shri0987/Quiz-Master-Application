@@ -17,6 +17,7 @@ from repository.database import db, migrate
 from controllers.usercontroller import UserController
 from controllers.admincontroller import AdminController
 from controllers.subjectcontroller import SubjectController
+from controllers.chaptercontroller import ChapterController
 
 def create_app():
     app = Flask(__name__)
@@ -32,6 +33,7 @@ def create_app():
     UserController(app)
     AdminController(app)
     SubjectController(app)
+    ChapterController(app)
     return app
 
 app = create_app()

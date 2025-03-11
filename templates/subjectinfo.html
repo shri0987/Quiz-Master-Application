@@ -43,27 +43,38 @@
                 </div>
                 <div class="card-footer bg-white text-center">
                     <a href="{{ url_for('get_subject_info_page', subject_id=subject.subjectId) }}" class="btn btn-secondary">
-                        Modify
+                        Modify Subject
                     </a>
                 </div>
             </div>
+            <br>
         </div>
 
         <div class="col-md-8">
             <div class="row">
+                {% if chapters %}
                 {% for chapter in chapters %}
                 <div class="col-md-6 mb-3">
                     <div class="subject-card">
                         <h6>{{ chapter.chapterName }}</h6>
-                        <p>{{ chapter.questionCount }}</p>
+                        <p>{{ chapter.chapterId }}</p>
+                        <br>
+                        <p>{{ chapter.description }}</p>
                         <div class="subject-card-footer">
-                            <a href="{{ url_for('get_subject_page', subject_id = subject.subjectId) }}">
-                                <img src="{{ url_for('static', filename='next.png') }}" width="40px" height="40px"></a>
+                            <a href="{{ url_for('get_chapter_page', subject_id = subject.subjectId, chapter_id = chapter.chapterId) }}">
+                                <img src="{{ url_for('static', filename='right.png') }}" width="30px" height="30px"></a>
                         </div>
                     </div>
                 </div>
                 {% endfor %}
+                {% endif %}
+                <div class="col-md-6 mb-3">
+                    <div class="subject-card text-center d-flex justify-content-center align-items-center" style="cursor: pointer;">
+                        <a href="{{ url_for('get_chapter_create_page', subject_id = subject.subjectId) }}" class="btn btn-outline-dark">+ Add Chapter</a>
+                    </div>
+                </div>
             </div>
+            
         </div>
     </div>
 </div>

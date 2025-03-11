@@ -24,19 +24,22 @@ class SubjectController:
                     raise RuntimeError("Base URL is not set in app config")
 
                 response = requests.get(f'{base_url}/v1/subjects/{subject_id}')
-                
                 if response.status_code != 200:
                     logging.error(f"Failed to fetch subject: {response.text}")
                     return f"Error fetching subject: {response.text}", response.status_code
 
                 subject_data = response.json()
-                chapters = [
-                    {"chapterId": 1, "chapterName": "Motion", "questionCount": 12},
-                    {"chapterId": 2, "chapterName": "Forces", "questionCount": 15},
-                    {"chapterId": 3, "chapterName": "Gravitation", "questionCount": 18}
-                ]
 
-                return render_template('subjectinfo.html', subject=subject_data, chapters = chapters)
+                chapter_response = requests.get(f'{base_url}/v1/chapters/{subject_id}')
+                if chapter_response.status_code != 200:
+                    logging.error(f"Failed to fetch chapters: {chapter_response.text}")
+                    return f"Error fetching chapters: {chapter_response.text}", chapter_response.status_code
+                
+                chapter_data = chapter_response.json()
+                if chapter_data is None:
+                    chapter_data = []
+
+                return render_template('subjectinfo.html', subject=subject_data, chapters=chapter_data)
 
             except TimeoutError as e:
                 logging.error(f"Timeout occurred: {e}", exc_info=True)
@@ -45,7 +48,7 @@ class SubjectController:
             except Exception as e:
                 logging.error(f"Unexpected error: {e}", exc_info=True)
                 return "An error occurred while fetching the subject page", 500
-            
+
 
         @self.app.route('/subjects/<subject_id>/info', methods=['GET'])
         def get_subject_info_page(subject_id):
@@ -61,7 +64,7 @@ class SubjectController:
                 if response.status_code != 200:
                     logging.error(f"Failed to fetch subject: {response.text}")
                     return f"Error fetching subject: {response.text}", response.status_code
-
+               
                 subject_data = response.json()
 
                 return render_template('subjectdetails.html', subject = subject_data)
@@ -228,5 +231,3 @@ class SubjectController:
             
             except Exception as e:
                 return render_template('subjectdetails.html', error_message = "Error occured while processing delete request", subject = subject), 500
-
-        

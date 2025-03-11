@@ -52,7 +52,6 @@ class SubjectRepository:
         finally:
             conn.close()
 
-
     def get_subject_by_id(self, subject_id) -> Subject:
         try:
             conn = sqlite3.connect('instance/quizmasterapp.db')
