@@ -514,3 +514,300 @@ INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:44:37] "GET /v1/chapters/DAT9083 HTT
 INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:44:37] "GET /subjects/DAT9083 HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:44:37] "[36mGET /static/subjectinfo.css HTTP/1.1[0m" 304 -
 INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:44:37] "[36mGET /static/right.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:root:Subject page request for DAT9083
+INFO:root:Start fetching subject using DAT9083
+INFO:root:Fetching subject DAT9083
+INFO:root:Subject DAT9083 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:49:52] "GET /v1/subjects/DAT9083 HTTP/1.1" 200 -
+INFO:root:Start fetching chapters using DAT9083
+INFO:root:Fetching all chapters using subject id DAT9083
+INFO:root:Chapters fetched successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:49:52] "GET /v1/chapters/DAT9083 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:49:52] "GET /subjects/DAT9083 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:49:52] "[36mGET /static/subjectinfo.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:49:52] "[36mGET /static/right.png HTTP/1.1[0m" 304 -
+INFO:root:Subject page request for DAT9083
+INFO:root:Start fetching subject using DAT9083
+INFO:root:Fetching subject DAT9083
+INFO:root:Subject DAT9083 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:49:56] "GET /v1/subjects/DAT9083 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:49:56] "GET /subjects/DAT9083/info HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:49:56] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
+INFO:root:session expired
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:50:01] "[32mPOST /v1/subject/update HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:50:01] "GET /admin/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:50:01] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Login request for admin shri0987
+INFO:root:Fetching admin shri0987 
+INFO:root:Admin shri0987 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:50:08] "[32mPOST /v1/admin/login HTTP/1.1[0m" 302 -
+INFO:root:Admin dashboard request for session shri0987
+INFO:root:Admin dashboard request for shri0987
+INFO:root:Request to fetch all subjects
+INFO:root:Fetching all subjects
+INFO:root:Subjects fetched successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:50:08] "GET /v1/subjects HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:50:08] "GET /admin/dashboard/shri0987 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:50:08] "[36mGET /static/admindashboardstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:50:08] "[36mGET /static/next.png HTTP/1.1[0m" 304 -
+INFO:root:Subject page request for DAT9083
+INFO:root:Start fetching subject using DAT9083
+INFO:root:Fetching subject DAT9083
+INFO:root:Subject DAT9083 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:50:10] "GET /v1/subjects/DAT9083 HTTP/1.1" 200 -
+INFO:root:Start fetching chapters using DAT9083
+INFO:root:Fetching all chapters using subject id DAT9083
+INFO:root:Chapters fetched successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:50:10] "GET /v1/chapters/DAT9083 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:50:10] "GET /subjects/DAT9083 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:50:10] "[36mGET /static/subjectinfo.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:50:10] "[36mGET /static/right.png HTTP/1.1[0m" 304 -
+INFO:root:Subject page request for DAT9083
+INFO:root:Start fetching subject using DAT9083
+INFO:root:Fetching subject DAT9083
+INFO:root:Subject DAT9083 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:50:11] "GET /v1/subjects/DAT9083 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:50:11] "GET /subjects/DAT9083/info HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:50:11] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Start updating subject named Data Science and id DAT9083
+INFO:root:Creating new subject Data Science
+INFO:root:Fetching subject DAT9083
+INFO:root:Subject DAT9083 fetched successfully
+INFO:root:subject <Response 236 bytes [200 OK]>
+INFO:root:Subject DAT9083 updated successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:50:14] "[32mPOST /v1/subject/update HTTP/1.1[0m" 302 -
+INFO:root:Subject page request for DAT9083
+INFO:root:Start fetching subject using DAT9083
+INFO:root:Fetching subject DAT9083
+INFO:root:Subject DAT9083 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:50:14] "GET /v1/subjects/DAT9083 HTTP/1.1" 200 -
+INFO:root:Start fetching chapters using DAT9083
+INFO:root:Fetching all chapters using subject id DAT9083
+INFO:root:Chapters fetched successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:50:14] "GET /v1/chapters/DAT9083 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:50:14] "GET /subjects/DAT9083 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:50:14] "[36mGET /static/subjectinfo.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:50:14] "[36mGET /static/right.png HTTP/1.1[0m" 304 -
+INFO:root:Start fetching chapter DATREG0671
+INFO:root:Fetching chapter DATREG0671
+INFO:root:Chapter DATREG0671 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:50:24] "GET /v1/chapters/getchapter/DATREG0671 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:50:24] "GET /DAT9083/chapters/DATREG0671 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:50:24] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Start deleting subject request DATREG0671 by shri0987
+INFO:root:Deleting chapter DATREG0671
+INFO:root:Fetching chapter DATREG0671
+INFO:root:Chapter DATREG0671 fetched successfully
+INFO:root:Chapter DATREG0671 deleted successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:50:28] "[32mPOST /v1/chapters/delete/DATREG0671 HTTP/1.1[0m" 302 -
+INFO:root:Subject page request for DAT9083
+INFO:root:Start fetching subject using DAT9083
+INFO:root:Fetching subject DAT9083
+INFO:root:Subject DAT9083 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:50:28] "GET /v1/subjects/DAT9083 HTTP/1.1" 200 -
+INFO:root:Start fetching chapters using DAT9083
+INFO:root:Fetching all chapters using subject id DAT9083
+INFO:root:Chapters fetched successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:50:28] "GET /v1/chapters/DAT9083 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:50:28] "GET /subjects/DAT9083 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:50:28] "[36mGET /static/subjectinfo.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:50:28] "[36mGET /static/right.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:root:Subject page request for DAT9083
+INFO:root:Start fetching subject using DAT9083
+INFO:root:Fetching subject DAT9083
+INFO:root:Subject DAT9083 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:51:07] "GET /v1/subjects/DAT9083 HTTP/1.1" 200 -
+INFO:root:Start fetching chapters using DAT9083
+INFO:root:Fetching all chapters using subject id DAT9083
+INFO:root:Chapters fetched successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:51:07] "GET /v1/chapters/DAT9083 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:51:07] "GET /subjects/DAT9083 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:51:07] "[36mGET /static/right.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:51:07] "[36mGET /static/subjectinfo.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:root:Subject page request for DAT9083
+INFO:root:Start fetching subject using DAT9083
+INFO:root:Fetching subject DAT9083
+INFO:root:Subject DAT9083 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:51:46] "GET /v1/subjects/DAT9083 HTTP/1.1" 200 -
+INFO:root:Start fetching chapters using DAT9083
+INFO:root:Fetching all chapters using subject id DAT9083
+INFO:root:Chapters fetched successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:51:46] "GET /v1/chapters/DAT9083 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:51:46] "GET /subjects/DAT9083 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:51:46] "[36mGET /static/subjectinfo.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:51:46] "[36mGET /static/right.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:root:Subject page request for DAT9083
+INFO:root:Start fetching subject using DAT9083
+INFO:root:Fetching subject DAT9083
+INFO:root:Subject DAT9083 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:52:01] "GET /v1/subjects/DAT9083 HTTP/1.1" 200 -
+INFO:root:Start fetching chapters using DAT9083
+INFO:root:Fetching all chapters using subject id DAT9083
+INFO:root:Chapters fetched successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:52:01] "GET /v1/chapters/DAT9083 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:52:01] "GET /subjects/DAT9083 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:52:01] "[36mGET /static/right.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:52:01] "[36mGET /static/subjectinfo.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:52:03] "GET /DAT9083/chapters/create HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:52:03] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Creating new chapter Regression
+INFO:root:Fetching chapter with name Regression
+INFO:root:Chapter Regression created successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:52:17] "[32mPOST /v1/chapters/create HTTP/1.1[0m" 302 -
+INFO:root:Subject page request for DAT9083
+INFO:root:Start fetching subject using DAT9083
+INFO:root:Fetching subject DAT9083
+INFO:root:Subject DAT9083 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:52:17] "GET /v1/subjects/DAT9083 HTTP/1.1" 200 -
+INFO:root:Start fetching chapters using DAT9083
+INFO:root:Fetching all chapters using subject id DAT9083
+INFO:root:Chapters fetched successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:52:17] "GET /v1/chapters/DAT9083 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:52:17] "GET /subjects/DAT9083 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:52:17] "[36mGET /static/subjectinfo.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:52:17] "[36mGET /static/right.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:root:Admin dashboard request for session None
+INFO:root:Admin dashboard request for shri0987
+INFO:root:Request to fetch all subjects
+INFO:root:Fetching all subjects
+INFO:root:Subjects fetched successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:53:08] "GET /v1/subjects HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:53:09] "GET /admin/dashboard/shri0987 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:53:09] "[36mGET /static/admindashboardstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:53:09] "[36mGET /static/next.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:root:Admin dashboard request for session None
+INFO:root:Admin dashboard request for shri0987
+INFO:root:Request to fetch all subjects
+INFO:root:Fetching all subjects
+INFO:root:Subjects fetched successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:53:27] "GET /v1/subjects HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:53:27] "GET /admin/dashboard/shri0987 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:53:27] "[36mGET /static/admindashboardstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:53:27] "[36mGET /static/next.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:53:34] "GET /subjects/create HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:53:34] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Create subject Application Development request by None
+INFO:root:Creating new subject Application Development
+INFO:root:Fetching subject with name Application Development
+INFO:root:Subject Application Development created successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:54:14] "[35m[1mPOST /v1/subjects/create HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:54:14] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:54:45] "GET /user/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:54:45] "[36mGET /static/loginstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:54:48] "GET /admin/login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:54:48] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Login request for admin shri0987
+INFO:root:Fetching admin shri0987 
+INFO:root:Admin shri0987 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:54:53] "[32mPOST /v1/admin/login HTTP/1.1[0m" 302 -
+INFO:root:Admin dashboard request for session shri0987
+INFO:root:Admin dashboard request for shri0987
+INFO:root:Request to fetch all subjects
+INFO:root:Fetching all subjects
+INFO:root:Subjects fetched successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:54:53] "GET /v1/subjects HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:54:53] "GET /admin/dashboard/shri0987 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:54:53] "[36mGET /static/admindashboardstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:54:53] "[36mGET /static/next.png HTTP/1.1[0m" 304 -
+INFO:root:Subject page request for APP1257
+INFO:root:Start fetching subject using APP1257
+INFO:root:Fetching subject APP1257
+INFO:root:Subject APP1257 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:55:01] "GET /v1/subjects/APP1257 HTTP/1.1" 200 -
+INFO:root:Start fetching chapters using APP1257
+INFO:root:Fetching all chapters using subject id APP1257
+INFO:root:Chapters fetched successfully
+INFO:root:No chapters found for subject id APP1257
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:55:01] "GET /v1/chapters/APP1257 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:55:01] "GET /subjects/APP1257 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:55:01] "[36mGET /static/subjectinfo.css HTTP/1.1[0m" 304 -
+INFO:root:Subject page request for APP1257
+INFO:root:Start fetching subject using APP1257
+INFO:root:Fetching subject APP1257
+INFO:root:Subject APP1257 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:55:03] "GET /v1/subjects/APP1257 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:55:03] "GET /subjects/APP1257/info HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:55:03] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Start deleting subject request APP1257 by shri0987
+INFO:root:Deleting subject APP1257
+INFO:root:Fetching subject APP1257
+INFO:root:Subject APP1257 fetched successfully
+INFO:root:Subject APP1257 deleted successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:55:04] "[32mPOST /v1/subjects/delete/APP1257 HTTP/1.1[0m" 302 -
+INFO:root:Admin dashboard request for session shri0987
+INFO:root:Admin dashboard request for shri0987
+INFO:root:Request to fetch all subjects
+INFO:root:Fetching all subjects
+INFO:root:Subjects fetched successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:55:04] "GET /v1/subjects HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:55:04] "GET /admin/dashboard/shri0987 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:55:04] "[36mGET /static/admindashboardstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:55:04] "[36mGET /static/next.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:55:09] "GET /subjects/create HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:55:09] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Create subject Application Development request by shri0987
+INFO:root:Creating new subject Application Development
+INFO:root:Fetching subject with name Application Development
+INFO:root:Subject Application Development created successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:55:14] "[32mPOST /v1/subjects/create HTTP/1.1[0m" 302 -
+INFO:root:Admin dashboard request for session shri0987
+INFO:root:Admin dashboard request for shri0987
+INFO:root:Request to fetch all subjects
+INFO:root:Fetching all subjects
+INFO:root:Subjects fetched successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:55:14] "GET /v1/subjects HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:55:14] "GET /admin/dashboard/shri0987 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:55:14] "[36mGET /static/admindashboardstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:55:14] "[36mGET /static/next.png HTTP/1.1[0m" 304 -
+INFO:root:Subject page request for APP2287
+INFO:root:Start fetching subject using APP2287
+INFO:root:Fetching subject APP2287
+INFO:root:Subject APP2287 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:55:23] "GET /v1/subjects/APP2287 HTTP/1.1" 200 -
+INFO:root:Start fetching chapters using APP2287
+INFO:root:Fetching all chapters using subject id APP2287
+INFO:root:Chapters fetched successfully
+INFO:root:No chapters found for subject id APP2287
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:55:23] "GET /v1/chapters/APP2287 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:55:23] "GET /subjects/APP2287 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:55:23] "[36mGET /static/subjectinfo.css HTTP/1.1[0m" 304 -
+INFO:root:Subject page request for APP2287
+INFO:root:Start fetching subject using APP2287
+INFO:root:Fetching subject APP2287
+INFO:root:Subject APP2287 fetched successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:55:25] "GET /v1/subjects/APP2287 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:55:25] "GET /subjects/APP2287/info HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:55:25] "[36mGET /static/adminloginstyle.css HTTP/1.1[0m" 304 -
+INFO:root:Start deleting subject request APP2287 by shri0987
+INFO:root:Deleting subject APP2287
+INFO:root:Fetching subject APP2287
+INFO:root:Subject APP2287 fetched successfully
+INFO:root:Subject APP2287 deleted successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:55:26] "[32mPOST /v1/subjects/delete/APP2287 HTTP/1.1[0m" 302 -
+INFO:root:Admin dashboard request for session shri0987
+INFO:root:Admin dashboard request for shri0987
+INFO:root:Request to fetch all subjects
+INFO:root:Fetching all subjects
+INFO:root:Subjects fetched successfully
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:55:26] "GET /v1/subjects HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:55:26] "GET /admin/dashboard/shri0987 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:55:27] "[36mGET /static/admindashboardstyle.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Mar/2025 03:55:27] "[36mGET /static/next.png HTTP/1.1[0m" 304 -

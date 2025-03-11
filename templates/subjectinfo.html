@@ -42,7 +42,7 @@
                     <p class="card-text">{{ subject.description }}</p>
                 </div>
                 <div class="card-footer bg-white text-center">
-                    <a href="{{ url_for('get_subject_info_page', subject_id=subject.subjectId) }}" class="btn btn-secondary">
+                    <a href="{{ url_for('get_subject_info_page', subject_id=subject.subjectId) }}" class="btn btn-dark">
                         Modify Subject
                     </a>
                 </div>
@@ -69,7 +69,7 @@
                 {% endfor %}
                 {% endif %}
                 <div class="col-md-6 mb-3">
-                    <div class="subject-card text-center d-flex justify-content-center align-items-center" style="cursor: pointer;">
+                    <div class="text-center d-flex justify-content-center align-items-center" style="cursor: pointer; padding-top: 50px;">
                         <a href="{{ url_for('get_chapter_create_page', subject_id = subject.subjectId) }}" class="btn btn-outline-dark">+ Add Chapter</a>
                     </div>
                 </div>
