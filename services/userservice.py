@@ -4,7 +4,7 @@ import logging
 from datetime import datetime
 from common.utility import Utility
 from models.user import User
-from common.error import AppError
+from common.error import ApplicationError
 from repository.userrepository import UserRepository
 logging.basicConfig(filename='app.log', level=logging.INFO) 
 
@@ -80,10 +80,10 @@ class UserService:
     def user_login(self, username, password) -> bool:
         try:
             if not self.is_valid_username(username):
-                raise AppError("Username is not valid", AppError.VALIDATION_ERROR)
+                raise ApplicationError("Username is not valid", ApplicationError.VALIDATION_ERROR)
             
             if not self.user_exists(username):
-                raise AppError("User not found", AppError.USER_NOT_FOUND)
+                raise ApplicationError("User not found", ApplicationError.USER_NOT_FOUND)
             
             logging.info("Fetching user %s ", username)
 
@@ -112,12 +112,12 @@ class UserService:
             isActive = True
 
             if not self.validate_user_creation_request(create_request):
-                raise AppError("User details are not valid", AppError.VALIDATION_ERROR)
+                raise ApplicationError("User details are not valid", ApplicationError.VALIDATION_ERROR)
 
             if self.user_exists(username):
-                raise AppError("User already exists", AppError.USER_EXISTS)
+                raise ApplicationError("User already exists", ApplicationError.USER_EXISTS)
 
-            logging.info("Start creating user %s", create_request.get('username'))
+            logging.info("Start creating user with username %s", create_request.get('username'))
 
             user_id = self.utility.generate_guid_id()
             created_on = self.utility.generate_current_datetime()

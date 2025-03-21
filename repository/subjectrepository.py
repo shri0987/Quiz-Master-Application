@@ -112,10 +112,9 @@ class SubjectRepository:
             conn.commit()
 
             if cursor.rowcount == 0:
-                logging.warning("No subject found with subjectId %s", subject.subjectId)
                 raise Exception(f"No subject found with subjectId {subject.subjectId}")
 
-            logging.info("Subject %s updated successfully", subject.subjectId)
+            logging.info("Subject %s updated in the database successfully", subject.subjectId)
             return subject
 
         except sqlite3.Error as e:
@@ -128,7 +127,6 @@ class SubjectRepository:
 
         finally:
             conn.close()
-
 
     def delete_subject(self, subject_id) -> str:
         try:

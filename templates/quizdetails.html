@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-    <title>Quiz Master | Subject Page</title>
+    <title>Quiz Master | Quiz Details</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/static/subjectinfo.css" rel="stylesheet">
+    <link href="/static/quizinfo.css" rel="stylesheet">
 </head>
 
 <body>
@@ -14,10 +14,10 @@
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="{{ url_for('render_admin_dashboard_page', username = username) }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Quiz</a>
+                    <a class="nav-link" href="{{ url_for('render_quiz_dashboard') }}">Quiz</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Summary</a>
@@ -35,33 +35,33 @@
         <div class="col-md-4">
             <div class="card shadow-sm">
                 <div class="card-body">
-                    <h3 class="card-title">{{ subject.subjectName }}</h3>
+                    <h3>Quiz</h3>
                     <br>
-                    <h6 class="card-subtitle text-muted">{{ subject.subjectId }}</h6>
+                    <h5 class="card-title">{{ quiz.quizName }}</h5>
                     <br>
-                    <p class="card-text">{{ subject.description }}</p>
+                    <h5 class="card-subtitle text-muted">{{ quiz.timeDurationMinutes }} minutes</h5>
+                    <br>
+                    <p class="card-text">{{ quiz.remarks }}</p>
                 </div>
                 <div class="card-footer bg-white text-center">
-                    <a href="{{ url_for('get_subject_info_page', subject_id=subject.subjectId) }}" class="btn btn-dark">
-                        Modify Subject
+                    <a href="{{ url_for('render_quiz_info_page', quiz_id = quiz.quizId) }}" class="btn btn-dark">
+                        Modify Quiz
                     </a>
                 </div>
             </div>
             <br>
         </div>
-
+        
         <div class="col-md-8">
             <div class="row">
-                {% if chapters %}
-                {% for chapter in chapters %}
+                {% if questions %}
+                {% for question in questions %}
                 <div class="col-md-6 mb-3">
-                    <div class="subject-card">
-                        <h6>{{ chapter.chapterName }}</h6>
-                        <p>{{ chapter.chapterId }}</p>
+                    <div class="quiz-card">
+                        <p>{{ question.questionStatement }}</p>
                         <br>
-                        <p>{{ chapter.description }}</p>
-                        <div class="subject-card-footer">
-                            <a href="{{ url_for('get_chapter_page', subject_id = subject.subjectId, chapter_id = chapter.chapterId) }}">
+                        <div class="quiz-card-footer">
+                            <a href="#">
                                 <img src="{{ url_for('static', filename='right.png') }}" width="30px" height="30px"></a>
                         </div>
                     </div>
@@ -70,12 +70,13 @@
                 {% endif %}
                 <div class="col-md-6 mb-3">
                     <div class="text-center d-flex justify-content-center align-items-center" style="cursor: pointer; padding-top: 50px;">
-                        <a href="{{ url_for('get_chapter_create_page', subject_id = subject.subjectId) }}" class="btn btn-outline-dark">+ Add Chapter</a>
+                        <a href="#" class="btn btn-outline-dark">+ Add Question</a>
                     </div>
                 </div>
             </div>
             
         </div>
+        
     </div>
 </div>
 

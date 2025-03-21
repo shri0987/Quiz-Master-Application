@@ -1,0 +1,66 @@
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+    background-color: #f5f5f5; 
+    padding: 10px 0;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-nav {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.navbar-nav .nav-link {
+    color: #363636;
+    font-weight: 500;
+    text-decoration: none; 
+    padding: 8px 12px;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #000000;  
+    text-decoration: none;
+}
+
+
+.container-box {
+    width: 100%;
+    max-width: 600px; 
+    margin-top: 70px;
+}
+
+.login-card {
+    width: 100%;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #fff;
+    border-color: #000000;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-group {
+    flex: 1;
+}
+
+.btn-block {
+    width: 100%;
+}

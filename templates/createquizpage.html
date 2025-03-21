@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Master | Create Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/createstyle.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg shadow-sm">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('render_admin_dashboard_page', username = username) }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('render_quiz_dashboard') }}">Quiz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Summary</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-box">
+        <div class="login-card">
+            <h3 style="text-align: center;">Add Quiz</h3>
+            <br>
+            {% if error_message %}
+            <div class="alert alert-danger">
+                {{ error_message }}
+            </div>
+            {% endif %}
+
+            <form action="{{ url_for('create_quiz') }}" method="POST">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group text-left">
+                            <label for="username">Username</label>
+                            <input type="username" class="form-control" id="username" name="username" value = {{username}} readonly>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group text-left">
+                            <label for="chapterId">Chapter ID</label>
+                            <input type="text" class="form-control" id="chapterId" name="chapterId" placeholder="Enter Chapter ID" required>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group text-left">
+                            <label for="quizDate">Quiz Date</label>
+                            <input type="date" class="form-control" id="quizDate" name="quizDate" placeholder="Enter Quiz Date" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group text-left">
+                            <label for="timeDurationMinutes">Time Duration (minutes)</label>
+                            <input type="text" class="form-control" id="timeDurationMinutes" name="timeDurationMinutes" placeholder="Enter Time Duration" required>
+                        </div>
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class="col-md-12">
+                        <div class="form-group text-left">
+                            <label for="remarks">Remarks</label>
+                            <textarea class="form-control" id="remarks" name="remarks" rows="3" placeholder="Enter Remarks"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-success btn-block">Create Quiz</button>
+            </form>            
+            <br>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

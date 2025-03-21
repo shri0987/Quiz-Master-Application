@@ -1,53 +1,86 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Master | Subject Details</title>
+    <title>Quiz Master | Subject Page</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/static/adminloginstyle.css" rel="stylesheet">
+    <link href="/static/subjectinfo.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="container-box">
-        <div class="login-card">
-            <h3 style="text-align: center;">{{ subject.subjectName }}</h3>
-            <br>
-            {% if error_message %}
-            <div class="alert alert-danger">
-                {{ error_message }}
-            </div>
-            {% endif %}
-
-            <form action="{{ url_for('update_subject') }}" method="POST">
-                <div class="form-group text-left">
-                    <label for="id">Subject ID</label>
-                    <input type="text" class="form-control" id="id" name="id" value="{{ subject.subjectId }}" readonly>
-                </div>
-                <div class="form-group text-left">
-                    <label for="name">Subject Name</label>
-                    <input type="text" class="form-control" id="name" name="name" value="{{ subject.subjectName }}" readonly>
-                </div>
-                <div class="form-group text-left">
-                    <label for="description">Subject Description</label>
-                    <textarea class="form-control" id="description" name="description" rows="6" cols="30">{{ subject.description }}</textarea>
-                </div>
-                <br>
-                <button type="submit" class="btn btn-success btn-block">Save Changes</button>
-            </form>
-
-            <br>
-
-            <form action="{{ url_for('delete_subject', subject_id=subject.subjectId) }}" method="POST">
-                <button type="submit" class="btn btn-outline-danger btn-block">Delete Subject</button>
-            </form>            
+<nav class="navbar navbar-expand-lg shadow-sm">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('render_admin_dashboard_page', username = username) }}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('render_quiz_dashboard') }}">Quiz</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Summary</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Logout</a>
+                </li>
+            </ul>
         </div>
     </div>
+</nav>
+<br><br>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title">{{ subject.subjectName }}</h3>
+                    <br>
+                    <h6 class="card-subtitle text-muted">{{ subject.subjectId }}</h6>
+                    <br>
+                    <p class="card-text">{{ subject.description }}</p>
+                </div>
+                <div class="card-footer bg-white text-center">
+                    <a href="{{ url_for('render_subject_info_page', subject_id=subject.subjectId) }}" class="btn btn-dark">
+                        Modify Subject
+                    </a>
+                </div>
+            </div>
+            <br>
+        </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+        <div class="col-md-8">
+            <div class="row">
+                {% if chapters %}
+                {% for chapter in chapters %}
+                <div class="col-md-6 mb-3">
+                    <div class="subject-card">
+                        <h6>{{ chapter.chapterName }}</h6>
+                        <p>{{ chapter.chapterId }}</p>
+                        <br>
+                        <p>{{ chapter.description }}</p>
+                        <div class="subject-card-footer">
+                            <a href="{{ url_for('render_chapter_page', subject_id = subject.subjectId, chapter_id = chapter.chapterId) }}">
+                                <img src="{{ url_for('static', filename='right.png') }}" width="30px" height="30px"></a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% endif %}
+                <div class="col-md-6 mb-3">
+                    <div class="text-center d-flex justify-content-center align-items-center" style="cursor: pointer; padding-top: 50px;">
+                        <a href="{{ url_for('render_chapter_create_page', subject_id = subject.subjectId) }}" class="btn btn-outline-dark">+ Add Chapter</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
 </body>
-
 </html>

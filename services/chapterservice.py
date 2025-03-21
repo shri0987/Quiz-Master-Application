@@ -6,7 +6,7 @@ from flask import jsonify
 from common.utility import Utility
 from models.chapter import Chapter
 from models.subject import Subject
-from common.error import AppError
+from common.error import ApplicationError
 from repository.chapterrepository import ChapterRepository
 logging.basicConfig(filename='app.log', level=logging.INFO) 
 
@@ -42,7 +42,7 @@ class ChapterService:
             logging.info("Fetching chapter with name %s", name)
 
             if not name:
-                raise AppError("Invalid request", AppError.INVALID_REQUEST)
+                raise ApplicationError("Invalid request", ApplicationError.INVALID_REQUEST)
 
             chapter = self.chapter_repository.get_chapter_by_name(name)
 
@@ -59,10 +59,10 @@ class ChapterService:
             logging.info("Fetching chapter %s", chapter_id)
 
             if not chapter_id:
-                raise AppError("Invalid request", AppError.INVALID_REQUEST)
+                raise ApplicationError("Invalid request", ApplicationError.INVALID_REQUEST)
             
             if not self.is_valid_chapter_id(chapter_id):
-                raise AppError("Invalid chapter id", AppError.INVALID_REQUEST)
+                raise ApplicationError("Invalid chapter id", ApplicationError.INVALID_REQUEST)
 
             chapter = self.chapter_repository.get_chapter_by_id(chapter_id).to_dict()
             return chapter
@@ -74,7 +74,7 @@ class ChapterService:
     def get_chapters_by_subject_id(self, subject_id) -> list:
         try:
             if not subject_id:
-                raise AppError("Invalid request: subject_id is required", AppError.INVALID_REQUEST)
+                raise ApplicationError("Invalid request: subject_id is required", ApplicationError.INVALID_REQUEST)
             
             logging.info("Fetching all chapters using subject id %s", subject_id)
             
@@ -87,8 +87,8 @@ class ChapterService:
             all_chapters = [chapter.to_dict() for chapter in chapters]
             return all_chapters
         
-        except AppError as e:
-            logging.error("AppError occurred while fetching chapters: %s", e)
+        except ApplicationError as e:
+            logging.error("ApplicationError occurred while fetching chapters: %s", e)
             raise
         
         except Exception as e:
@@ -106,7 +106,7 @@ class ChapterService:
             is_existing_chapter = self.is_existing_chapter(chapter_name)
 
             if is_existing_chapter == True:
-                raise AppError("Chapter name already exists", AppError.CHAPTER_EXISTS)
+                raise ApplicationError("Chapter name already exists", ApplicationError.CHAPTER_EXISTS)
 
             created_chapter = self.chapter_repository.create_chapter(new_chapter)
 
@@ -114,7 +114,7 @@ class ChapterService:
                 return None
             return created_chapter
         
-        except AppError as e:
+        except ApplicationError as e:
             logging.error("Error occured while creating chapter: %s", e)
             raise
 
@@ -129,7 +129,7 @@ class ChapterService:
             existing_chapter = self.get_chapter_by_chapter_id(chapter_id)
 
             if existing_chapter is None:
-                raise AppError("Subject does not exist", AppError.SUBJECTS_NOT_FOUND)
+                raise ApplicationError("Subject does not exist", ApplicationError.SUBJECTS_NOT_FOUND)
             
             logging.info(f'chapter {jsonify(existing_chapter)}')
             
@@ -147,7 +147,7 @@ class ChapterService:
                 return None
             return updated_chapter
         
-        except AppError as e:
+        except ApplicationError as e:
             logging.error("Error occured while updating chapter: %s", e)
             raise
 
@@ -160,15 +160,15 @@ class ChapterService:
             logging.info("Deleting chapter %s", chapter_id)
 
             if not chapter_id:
-                raise AppError("Invalid request", AppError.INVALID_REQUEST)
+                raise ApplicationError("Invalid request", ApplicationError.INVALID_REQUEST)
             
             if not self.is_valid_chapter_id(chapter_id):
-                raise AppError("Invalid chapter id", AppError.INVALID_REQUEST)
+                raise ApplicationError("Invalid chapter id", ApplicationError.INVALID_REQUEST)
             
             chapter = self.get_chapter_by_chapter_id(chapter_id) 
             
             if chapter is None:
-                raise AppError("Chapter does not exist", AppError.CHAPTERS_NOT_FOUND)
+                raise ApplicationError("Chapter does not exist", ApplicationError.CHAPTERS_NOT_FOUND)
 
             deleted_chapter = self.chapter_repository.delete_chapter(chapter)
 
@@ -176,7 +176,7 @@ class ChapterService:
                 return None
             return deleted_chapter
             
-        except AppError as e:
+        except ApplicationError as e:
             logging.error("Error occured while deleting chapter: %s", e)
             raise
 

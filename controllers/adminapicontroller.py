@@ -1,6 +1,6 @@
 import logging
 import requests
-from common.error import AppError
+from common.error import ApplicationError
 from common.utility import Utility
 from models.admin import Admin, db
 from services.adminservice import AdminService
@@ -12,23 +12,23 @@ class AdminController:
         self.app = app
         self.admin_service = AdminService()
         self.utility = Utility()
-        self.admin_routes()
+        self.admin_api_routes()
 
-    def admin_routes(self):
+    def admin_api_routes(self): 
 
         @self.app.route('/admin/login')
-        def admin_home():
+        def render_admin_login_page():
             return render_template('adminlogin.html')
         
         
         @self.app.route('/admin/dashboard/<username>', methods=['GET'])
-        def admin_dashboard(username):
+        def render_admin_dashboard_page(username):
             try:
-                logging.info(f'Admin dashboard request for session {session.get('admin_user')}') 
+                logging.info(f'Admin dashboard request for session {session.get('admin_username')}') 
                 logging.info(f'Admin dashboard request for {username}') 
 
                 base_url = self.app.config["URL"]
-                response = requests.get(f'{base_url}/v1/subjects')
+                response = requests.get(f'{base_url}/api/v1/subjects')
 
                 if response.status_code != 200:
                     logging.error(f"Failed to fetch subject: {response.text}")
@@ -37,7 +37,7 @@ class AdminController:
                 subject_data = response.json()
                 return render_template('admindashboard.html', username=username, subjects = subject_data)
             
-            except AppError as e:
+            except ApplicationError as e:
                 return jsonify(e.to_dict()), e.status_code
             
             except TimeoutError as e:
@@ -47,7 +47,7 @@ class AdminController:
                 return jsonify({"error": f"Error occurred while processing admin dashboard request {e}"}), 500
         
 
-        @self.app.route('/v1/admin/login', methods=['POST'])
+        @self.app.route('/api/v1/admin/login', methods=['POST'])
         def admin_login():
             try:
                 username = request.form.get('username')
@@ -56,19 +56,19 @@ class AdminController:
                 logging.info(f'Login request for admin {username}')
 
                 if not username or not password:
-                    raise AppError("Invalid request", AppError.INVALID_REQUEST)
+                    raise ApplicationError("Invalid request", ApplicationError.INVALID_REQUEST)
                 
                 is_login_success = self.admin_service.admin_login(username, password)
 
                 if not is_login_success:
-                    raise AppError("Invalid credentials", AppError.INVALID_CREDENTIALS)
+                    raise ApplicationError("Invalid credentials", ApplicationError.INVALID_CREDENTIALS)
                 
-                session['admin_user'] = username
+                session['admin_username'] = username
                 session['is_admin_logged_in'] = True
             
-                return redirect(url_for('admin_dashboard', username = username))
+                return redirect(url_for('render_admin_dashboard_page', username = username))
             
-            except AppError as e:
+            except ApplicationError as e:
                 error_details = e.to_dict()
                 return render_template('adminlogin.html', error_message = error_details["error"]), e.status_code
 

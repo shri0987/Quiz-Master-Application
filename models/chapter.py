@@ -8,6 +8,8 @@ class Chapter(db.Model):
     description = db.Column(db.String(500))
     createdOn = db.Column(db.DateTime)
 
+    quizzes = db.relationship("Quiz", backref="chapter", cascade="all, delete-orphan")
+
     def __init__(self, chapterId, subjectId, chapterName, description, createdOn):
         self.chapterId = chapterId
         self.subjectId = subjectId

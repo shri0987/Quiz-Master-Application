@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Master | Update Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/createstyle.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg shadow-sm">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('render_admin_dashboard_page', username = username) }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('render_quiz_dashboard') }}">Quiz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Summary</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-box">
+        <div class="login-card">
+            <h3 style="text-align: center;">Update Quiz</h3>
+            <br>
+            {% if error_message %}
+            <div class="alert alert-danger">
+                {{ error_message }}
+            </div>
+            {% endif %}
+
+            <form action="{{ url_for('update_quiz') }}" method="POST">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="form-group text-left">
+                            <label for="quizId">Quiz ID</label>
+                            <input type="quizId" class="form-control" id="quizId" name="quizId" value = "{{ quiz.quizId }}" readonly>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group text-left">
+                            <label for="chapterId">Chapter ID</label>
+                            <input type="text" class="form-control" id="chapterId" name="chapterId" value = "{{ quiz.chapterId }}" readonly>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group text-left">
+                            <label for="quizDate">Quiz Date</label>
+                            <input type="date" class="form-control" id="quizDate" name="quizDate" value = "{{ quiz.quizDate }}" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group text-left">
+                            <label for="timeDurationMinutes">Time Duration (minutes)</label>
+                            <input type="text" class="form-control" id="timeDurationMinutes" name="timeDurationMinutes" value = "{{ quiz.timeDurationMinutes }}" required>
+                        </div>
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class="col-md-12">
+                        <div class="form-group text-left">
+                            <label for="remarks">Remarks</label>
+                            <textarea class="form-control" id="remarks" name="remarks" rows="2" placeholder="Enter Remarks">{{ quiz.remarks }}</textarea>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-success btn-block">Update Quiz</button>
+            </form>            
+            <br>
+            <form action="{{ url_for('delete_quiz', quiz_id = quiz.quizId) }}" method="POST">
+                <button type="submit" class="btn btn-outline-danger btn-block">Delete Quiz</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

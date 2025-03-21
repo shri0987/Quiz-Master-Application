@@ -21,6 +21,10 @@ class UserRepository:
             logging.error("Database error in fetch user : %s", e)
             raise Exception("Database error occured while executing SQL query")
         
+        except TimeoutError as e:
+            logging.error("Timeout error occured in fetch user by username: %s", e)
+            raise Exception("Timeout error occured while fetch user")
+        
         except Exception as e:
             logging.error("Error occured in fetch user : %s", e)
             raise Exception("Error occured in fetch user")
@@ -43,6 +47,10 @@ class UserRepository:
         except sqlite3.Error as e:
             logging.error("Database error occured in create user : %s", e)
             raise Exception("Database error occured while executing SQL query")
+        
+        except TimeoutError as e:
+            logging.error("Timeout error occured in create user : %s", e)
+            raise Exception("Timeout error occured while creating user")
         
         except Exception as e:
             logging.error("Error occured in create user : %s", e)

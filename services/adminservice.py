@@ -3,7 +3,7 @@ import uuid
 import logging
 from datetime import datetime
 from models.admin import Admin
-from common.error import AppError
+from common.error import ApplicationError
 from repository.adminrepository import AdminRepository
 logging.basicConfig(filename='app.log', level=logging.INFO) 
 
@@ -33,7 +33,7 @@ class AdminService:
     def admin_login(self, username, password) -> bool:
         try:
             if not self.is_valid_username(username):
-                raise AppError("Admin username is not valid", AppError.VALIDATION_ERROR)
+                raise ApplicationError("Admin username is not valid", ApplicationError.VALIDATION_ERROR)
             
             logging.info("Fetching admin %s ", username)
             user = self.admin_repository.get_admin_by_username(username)

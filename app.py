@@ -14,10 +14,11 @@ from models.question import Question
 from models.quiz import Quiz
 from models.score import Score
 from repository.database import db, migrate
-from controllers.usercontroller import UserController
-from controllers.admincontroller import AdminController
-from controllers.subjectcontroller import SubjectController
-from controllers.chaptercontroller import ChapterController
+from controllers.userapicontroller import UserController
+from controllers.adminapicontroller import AdminController
+from controllers.subjectapicontroller import SubjectController
+from controllers.chapterapicontroller import ChapterController
+from controllers.quizapicontroller import QuizController
 
 def create_app():
     app = Flask(__name__)
@@ -34,9 +35,11 @@ def create_app():
     AdminController(app)
     SubjectController(app)
     ChapterController(app)
+    QuizController(app)
     return app
 
 app = create_app()
 
 if __name__ == '__main__':
     app.run(debug=True)
+ 

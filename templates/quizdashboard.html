@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Quiz Master | Admin Dashboard</title>
+    <title>Quiz Master | Quizzes</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static/admindashboardstyle.css" , rel="stylesheet">
@@ -31,28 +31,24 @@
     </nav>
     <br>
     <div class="container mt-4">
-        <h3>Welcome {{ username }}</h3>
+        <h4>Quizzes</h4>
         <br>
-        {% if error_message %}
-            <div class="alert alert-danger">
-                {{ error_message }}
-            </div>
-        {% endif %}
         <div class="row">
-            {% if subjects %}
-            {% for subject in subjects %}
+            {% if quizzes %}
+            {% for quiz in quizzes %}
             <div class="col-md-3 mb-4">
                 <div class="card shadow-sm position-relative">
                     <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-start">
-                            <h5 class="card-title font-weight-bold">{{ subject.subjectName }}</h5>                        
-                        </div>
-                        <h5>{{ subject.subjectId }}</h5>
+                        <h5 class="card-title font-weight-bold">Quiz</h5>
+                        <h5 class="card-title font-weight-bold">{{ quiz.quizName }}</h5>                        
+                        <p>{{ quiz.timeDurationMinutes }} minutes</p>
+                        <p>{{ quiz.quizDate }}</p>
                         <br>
-                        <p class="card-text">{{ subject.description }}</p>
+                        <p class="card-text">{{ quiz.remarks }}</p>
                     </div>
+                    <br>
                     <div class="card-footer bg-white border-0">
-                        <a href="{{ url_for('render_subject_page', subject_id = subject.subjectId) }}">
+                        <a href="{{ url_for('render_quiz_page_by_id', quiz_id = quiz.quizId) }}">
                             <img src="{{ url_for('static', filename='right.png') }}" width="40px" height="40px"></a>
                     </div>
                 </div>
@@ -61,7 +57,7 @@
             {% endif %}
             <div class="col-md-3 mb-4">
                 <div class="card position-relative text-center d-flex justify-content-center align-items-center" style="cursor: pointer;">
-                    <a href="{{ url_for('render_subject_create_page') }}" class="btn btn-outline-dark">+ Add Subject</a>
+                    <a href="{{ url_for('render_quiz_create_page')}}" class="btn btn-outline-dark">+ Add Quiz</a>
                 </div>
             </div>
         </div>

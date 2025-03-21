@@ -8,7 +8,7 @@ from datetime import datetime
 from flask import jsonify
 from common.utility import Utility
 from models.subject import Subject
-from common.error import AppError
+from common.error import ApplicationError
 from repository.subjectrepository import SubjectRepository
 logging.basicConfig(filename='app.log', level=logging.INFO) 
 
@@ -42,10 +42,12 @@ class SubjectService:
         try:
             logging.info("Fetching all subjects")
             subjects = self.subject_repository.get_all_subjects()
+      
+            if not subjects:
+                logging.info("No xubjects found")
+                return []
+
             all_subjects = [subject.to_dict() for subject in subjects]
-            
-            if len(all_subjects) == 0 or all_subjects is None:
-                return None
             return all_subjects
         
         except Exception as e:
@@ -55,13 +57,13 @@ class SubjectService:
 
     def get_subject_by_id(self, subject_id) -> Subject:
         try:
-            logging.info("Fetching subject %s", subject_id)
+            logging.info("Fetching subject using subject id %s", subject_id)
 
             if not subject_id:
-                raise AppError("Invalid request", AppError.INVALID_REQUEST)
+                raise ApplicationError("Invalid request", ApplicationError.INVALID_REQUEST)
             
             if not self.is_valid_subject_id(subject_id):
-                raise AppError("Invalid subject id", AppError.INVALID_REQUEST)
+                raise ApplicationError("Invalid subject id", ApplicationError.INVALID_REQUEST)
 
             subject = self.subject_repository.get_subject_by_id(subject_id).to_dict()
             return subject
@@ -76,7 +78,7 @@ class SubjectService:
             logging.info("Fetching subject with name %s", name)
 
             if not name:
-                raise AppError("Invalid request", AppError.INVALID_REQUEST)
+                raise ApplicationError("Invalid request", ApplicationError.INVALID_REQUEST)
 
             subject = self.subject_repository.get_subject_by_name(name)
 
@@ -100,7 +102,7 @@ class SubjectService:
             is_existing_subject = self.is_existing_subject(name)
 
             if is_existing_subject == True:
-                raise AppError("Subject name already exists", AppError.SUBJECT_EXISTS)
+                raise ApplicationError("Subject name already exists", ApplicationError.SUBJECT_EXISTS)
 
             created_subject = self.subject_repository.create_subject(new_subject)
 
@@ -108,7 +110,7 @@ class SubjectService:
                 return None
             return created_subject
         
-        except AppError as e:
+        except ApplicationError as e:
             logging.error("Error occured while creating subject: %s", e)
             raise
 
@@ -117,7 +119,7 @@ class SubjectService:
             raise
 
 
-    def update_subject(self, id, name, description):
+    def update_subject(self, id, name, description) -> Subject:
         try:
             logging.info("Creating new subject %s", name)
 
@@ -126,7 +128,7 @@ class SubjectService:
             logging.info(f'subject {jsonify(existing_subject)}')
 
             if existing_subject is None:
-                raise AppError("Subject does not exist", AppError.SUBJECTS_NOT_FOUND)
+                raise ApplicationError("Subject does not exist", ApplicationError.SUBJECTS_NOT_FOUND)
             
             id = existing_subject['subjectId']
             name = existing_subject['subjectName']
@@ -141,7 +143,7 @@ class SubjectService:
                 return None
             return updated_subject
         
-        except AppError as e:
+        except ApplicationError as e:
             logging.error("Error occured while updating subject: %s", e)
             raise
 
@@ -155,13 +157,13 @@ class SubjectService:
             logging.info("Deleting subject %s", subject_id)
 
             if not subject_id:
-                raise AppError("Invalid request", AppError.INVALID_REQUEST)
+                raise ApplicationError("Invalid request", ApplicationError.INVALID_REQUEST)
             
             if not self.is_valid_subject_id(subject_id):
-                raise AppError("Invalid subject id", AppError.INVALID_REQUEST)
+                raise ApplicationError("Invalid subject id", ApplicationError.INVALID_REQUEST)
             
             if self.get_subject_by_id(subject_id) is None:
-                raise AppError("Subject does not exist", AppError.SUBJECTS_NOT_FOUND)
+                raise ApplicationError("Subject does not exist", ApplicationError.SUBJECTS_NOT_FOUND)
 
             deleted_subject = self.subject_repository.delete_subject(subject_id)
 
@@ -169,7 +171,7 @@ class SubjectService:
                 return None
             return deleted_subject
             
-        except AppError as e:
+        except ApplicationError as e:
             logging.error("Error occured while deleting subject: %s", e)
             raise
 
