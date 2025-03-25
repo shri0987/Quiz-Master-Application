@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Master | View Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/updatestyle.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg shadow-sm">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link"
+                            href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Quiz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Summary</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-box">
+        <div class="login-card">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="text-center">Quiz Details</h3>
+                    <br>
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <th>Quiz Name</th>
+                                <td>{{ quiz.quizName }}</td>
+                            </tr>
+                            <tr>
+                                <th>Quiz Date</th>
+                                <td>{{ quiz.quizDate }}</td>
+                            </tr>
+                            <tr>
+                                <th>Time Duration</th>
+                                <td>{{ quiz.timeDurationMinutes }} minutes</td>
+                            </tr>
+                            <tr>
+                                <th>Remarks</th>
+                                <td>{{ quiz.remarks }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <div class="text-center">
+                        <a href="{{ url_for('render_user_dashboard_page', username = username) }}" class="btn btn-dark">Back</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

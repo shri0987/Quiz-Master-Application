@@ -1,3 +1,6 @@
 {
-    "workbench.editorLargeFileConfirmation": 5000
+    "workbench.editorLargeFileConfirmation": 5000,
+    "python.analysis.extraPaths": [
+        "./api"
+    ]
 }

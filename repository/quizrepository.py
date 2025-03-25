@@ -2,6 +2,7 @@ import sqlite3
 import logging
 
 from models.quiz import Quiz
+from models.response import Response
 logging.basicConfig(filename='app.log', level=logging.INFO) 
 
 class QuizRepository:
@@ -15,7 +16,8 @@ class QuizRepository:
             SELECT q.quizId, c.chapterId, q.quizDate, q.timeDurationMinutes, q.remarks, q.quizName 
             FROM quizzes as q
             INNER JOIN chapters as c
-            ON q.chapterId = c.chapterId''')
+            ON q.chapterId = c.chapterId
+            where DATE(q.quizDate) >= DATE()''')
 
             results = cursor.fetchall()
             
@@ -136,6 +138,27 @@ class QuizRepository:
         
         except Exception as e:
             raise Exception("Error occured in delete quiz")
+        
+        finally:
+            conn.close()
+
+
+    def save_user_response(self, response) -> Response:
+        try:
+            conn = sqlite3.connect('instance/quizmasterapp.db')
+            cursor = conn.cursor()
+            cursor.execute("INSERT INTO responses VALUES (NULL, ?, ?, ?, ?, ?, ?, ?)", 
+               (response.quizId, response.questionId, response.userName, response.userResponse, 
+                response.marksScored, response.attemptTime, response.isQuestionVisited))
+            conn.commit()
+            logging.info(f"Response added successfully for quiz {response.quizId} question {response.questionId} user {response.userName}")
+            return response
+        
+        except sqlite3.Error as e:
+            raise Exception(f"SQLite error occured while executing save response SQL query {e}")
+        
+        except Exception as e:
+            raise Exception(f"Error occured while saving response {e}")
         
         finally:
             conn.close()

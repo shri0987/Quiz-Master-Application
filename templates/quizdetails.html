@@ -23,7 +23,7 @@
                     <a class="nav-link" href="#">Summary</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Logout</a>
+                    <a class="nav-link" href="{{ url_for('admin_logout') }}">Logout</a>
                 </li>
             </ul>
         </div>
@@ -31,13 +31,13 @@
 </nav>
 <br><br>
 <div class="container mt-4">
+    <h4 class="card-title font-weight-bold">Quiz Details</h4>
+    <br>
     <div class="row">
         <div class="col-md-4">
             <div class="card shadow-sm">
                 <div class="card-body">
-                    <h3>Quiz</h3>
-                    <br>
-                    <h5 class="card-title">{{ quiz.quizName }}</h5>
+                    <h5 class="card-title font-weight-bold">{{ quiz.quizName }}</h5>
                     <br>
                     <h5 class="card-subtitle text-muted">{{ quiz.timeDurationMinutes }} minutes</h5>
                     <br>
@@ -58,10 +58,12 @@
                 {% for question in questions %}
                 <div class="col-md-6 mb-3">
                     <div class="quiz-card">
-                        <p>{{ question.questionStatement }}</p>
+                        <h6>{{ question.questionStatement }}</h6>
+                        <br>
+                        <p class="card-subtitle text-muted">{{ question.marks }} marks</p>
                         <br>
                         <div class="quiz-card-footer">
-                            <a href="#">
+                            <a href=" {{ url_for('render_question_page', quiz_id = quiz.quizId, question_id = question.questionId) }}">
                                 <img src="{{ url_for('static', filename='right.png') }}" width="30px" height="30px"></a>
                         </div>
                     </div>
@@ -70,7 +72,7 @@
                 {% endif %}
                 <div class="col-md-6 mb-3">
                     <div class="text-center d-flex justify-content-center align-items-center" style="cursor: pointer; padding-top: 50px;">
-                        <a href="#" class="btn btn-outline-dark">+ Add Question</a>
+                        <a href="{{ url_for('render_question_create_page', quiz_id = quiz.quizId) }}" class="btn btn-outline-dark">+ Add Question</a>
                     </div>
                 </div>
             </div>

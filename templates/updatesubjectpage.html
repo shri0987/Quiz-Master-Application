@@ -7,7 +7,7 @@
     <title>Quiz Master | Update Subject</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/static/createstyle.css" rel="stylesheet">
+    <link href="/static/updatestyle.css" rel="stylesheet">
 </head>
 
 <body>
@@ -16,7 +16,8 @@
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('render_admin_dashboard_page', username=username) }}">Home</a>
+                        <a class="nav-link"
+                            href="{{ url_for('render_admin_dashboard_page', username=username) }}">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('render_quiz_dashboard') }}">Quiz</a>
@@ -25,60 +26,66 @@
                         <a class="nav-link" href="#">Summary</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
+                        <a class="nav-link" href="{{ url_for('admin_logout') }}">Logout</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    
+
     <div class="container-box">
         <div class="login-card">
-            <h3 style="text-align: center;">{{ subject.subjectName }}</h3>
             <br>
-            {% if error_message %}
-            <div class="alert alert-danger">
-                {{ error_message }}
-            </div>
-            {% endif %}
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 style="text-align: center; padding-top: 40%;">Update Subject</h3>
+                </div>
+                <div class="col-md-6">
+                    {% if error_message %}
+                    <div class="alert alert-danger">
+                        {{ error_message }}
+                    </div>
+                    {% endif %}
+                    <form action="{{ url_for('update_subject') }}" method="POST">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group text-left">
+                                    <label for="id">Subject ID</label>
+                                    <input type="text" class="form-control" id="id" name="id"
+                                        value="{{ subject.subjectId }}" readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group text-left">
+                                    <label for="name">Subject Name</label>
+                                    <input type="text" class="form-control" id="name" name="name"
+                                        value="{{ subject.subjectName }}" readonly>
+                                </div>
+                            </div>
+                        </div>
 
-            <form action="{{ url_for('update_subject') }}" method="POST">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group text-left">
-                            <label for="id">Subject ID</label>
-                            <input type="text" class="form-control" id="id" name="id" value="{{ subject.subjectId }}" readonly>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group text-left">
+                                    <label for="description">Subject Description</label>
+                                    <textarea class="form-control" id="description" name="description"
+                                        rows="5">{{ subject.description }}</textarea>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group text-left">
-                            <label for="name">Subject Name</label>
-                            <input type="text" class="form-control" id="name" name="name" value="{{ subject.subjectName }}" readonly>
-                        </div>
-                    </div>
+
+                        <br>
+                        <button type="submit" class="btn btn-success btn-block">Save Changes</button>
+                    </form>
+                    <br>
+                    <form action="{{ url_for('delete_subject', subject_id=subject.subjectId) }}" method="POST">
+                        <button type="submit" class="btn btn-outline-danger btn-block">Delete Subject</button>
+                    </form>
                 </div>
-                
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group text-left">
-                            <label for="description">Subject Description</label>
-                            <textarea class="form-control" id="description" name="description" rows="3">{{ subject.description }}</textarea>
-                        </div>
-                    </div>
-                </div>
-                
-                <br>
-                <button type="submit" class="btn btn-success btn-block">Save Changes</button>
-            </form>
-            
-            <br>
-            
-            <form action="{{ url_for('delete_subject', subject_id=subject.subjectId) }}" method="POST">
-                <button type="submit" class="btn btn-outline-danger btn-block">Delete Subject</button>
-            </form>
+            </div>
         </div>
     </div>
-    
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 </body>

@@ -21,7 +21,7 @@ class Quiz(db.Model):
         return {
             'quizId': self.quizId,
             'quizName': self.quizName,
-            'chapterId': self.chapterId,
+            'chapterId': self.chapterId, 
             'quizDate': self.quizDate,
             'timeDurationMinutes': self.timeDurationMinutes,
             'remarks' : self.remarks

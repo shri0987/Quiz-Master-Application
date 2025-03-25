@@ -28,7 +28,7 @@ class AdminController:
                 logging.info(f'Admin dashboard request for {username}') 
 
                 base_url = self.app.config["URL"]
-                response = requests.get(f'{base_url}/api/v1/subjects')
+                response = requests.get(f'{base_url}/api/v1/subject')
 
                 if response.status_code != 200:
                     logging.error(f"Failed to fetch subject: {response.text}")
@@ -79,4 +79,15 @@ class AdminController:
                 return render_template('adminlogin.html', error_message = "Error occurred while processing admin login request"), 500
             
         
-       
+        @self.app.route('/api/v1/admin/logout', methods=['GET'])
+        def admin_logout():
+            try:
+                session.pop('admin_username')
+                session.pop('is_admin_logged_in')
+                return redirect(url_for('render_admin_login_page'))
+            
+            except TimeoutError as e:
+                return render_template('adminlogin.html', error_message = "Operation Timed out"), 504
+
+            except Exception as e:
+                return render_template('adminlogin.html', error_message = "Error occurred while processing admin login request"), 500 

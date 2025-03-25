@@ -7,7 +7,7 @@
     <title>Quiz Master | Update Chapter</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/static/createstyle.css" rel="stylesheet">
+    <link href="/static/updatestyle.css" rel="stylesheet">
 </head>
 
 <body>
@@ -16,7 +16,8 @@
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('render_admin_dashboard_page', username=username) }}">Home</a>
+                        <a class="nav-link"
+                            href="{{ url_for('render_admin_dashboard_page', username=username) }}">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('render_quiz_dashboard') }}">Quiz</a>
@@ -25,69 +26,79 @@
                         <a class="nav-link" href="#">Summary</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
+                        <a class="nav-link" href="{{ url_for('admin_logout') }}">Logout</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    
+
     <div class="container-box">
         <div class="login-card">
-            <h3 style="text-align: center;">{{ chapter.chapterName }}</h3>
             <br>
-            {% if error_message %}
-            <div class="alert alert-danger">
-                {{ error_message }}
-            </div>
-            {% endif %}
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 style="text-align: center; padding-top: 40%;">Update Chapter</h3>
+                    <br>
+                    <p style="text-align: center; text-decoration: gray;">{{ chapter.chapterId }}</p>
+                    <p style="text-align: center;">{{ chapter.chapterName }}</p>
+                </div>
+                <div class="col-md-6">
+                    {% if error_message %}
+                    <div class="alert alert-danger">
+                        {{ error_message }}
+                    </div>
+                    {% endif %}        
+                    <form action="{{ url_for('update_chapter') }}" method="POST">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group text-left">
+                                    <label for="subjectId">Subject ID</label>
+                                    <input type="text" class="form-control" id="subjectId" name="subjectId"
+                                        value="{{ chapter.subjectId }}" readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group text-left">
+                                    <label for="chapterId">Chapter ID</label>
+                                    <input type="text" class="form-control" id="chapterId" name="chapterId"
+                                        value="{{ chapter.chapterId }}" readonly>
+                                </div>
+                            </div>
+                        </div>
 
-            <form action="{{ url_for('update_chapter') }}" method="POST">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group text-left">
-                            <label for="subjectId">Subject ID</label>
-                            <input type="text" class="form-control" id="subjectId" name="subjectId" value="{{ chapter.subjectId }}" readonly>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group text-left">
+                                    <label for="name">Chapter Name</label>
+                                    <input type="text" class="form-control" id="name" name="name"
+                                        value="{{ chapter.chapterName }}" readonly>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group text-left">
-                            <label for="chapterId">Chapter ID</label>
-                            <input type="text" class="form-control" id="chapterId" name="chapterId" value="{{ chapter.chapterId }}" readonly>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group text-left">
+                                    <label for="description">Chapter Description</label>
+                                    <textarea class="form-control" id="description" name="description"
+                                        rows="3">{{ chapter.description }}</textarea>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+
+                        <br>
+                        <button type="submit" class="btn btn-success btn-block">Save Changes</button>
+                    </form>
+                    <br>
+                    <form action="{{ url_for('delete_chapter', chapter_id=chapter.chapterId) }}" method="POST">
+                        <button type="submit" class="btn btn-outline-danger btn-block">Delete Chapter</button>
+                    </form>
                 </div>
-                
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group text-left">
-                            <label for="name">Chapter Name</label>
-                            <input type="text" class="form-control" id="name" name="name" value="{{ chapter.chapterName }}" readonly>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group text-left">
-                            <label for="description">Chapter Description</label>
-                            <textarea class="form-control" id="description" name="description" rows="3">{{ chapter.description }}</textarea>
-                        </div>
-                    </div>
-                </div>
-                
-                <br>
-                <button type="submit" class="btn btn-success btn-block">Save Changes</button>
-            </form>
-            
-            <br>
-            
-            <form action="{{ url_for('delete_chapter', chapter_id=chapter.chapterId) }}" method="POST">
-                <button type="submit" class="btn btn-outline-danger btn-block">Delete Chapter</button>
-            </form>
+            </div>
         </div>
     </div>
-    
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 </body>

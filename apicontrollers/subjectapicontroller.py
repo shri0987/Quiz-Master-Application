@@ -23,7 +23,7 @@ class SubjectController:
                 if not base_url:
                     raise RuntimeError("Base URL is not set in app config")
 
-                response = requests.get(f'{base_url}/api/v1/subjects/{subject_id}')
+                response = requests.get(f'{base_url}/api/v1/subject/{subject_id}')
                 if response.status_code != 200:
                     logging.error(f"Failed to fetch subject: {response.text}")
                     return f"Error fetching subject: {response.text}", response.status_code
@@ -63,7 +63,7 @@ class SubjectController:
                 if not base_url:
                     raise RuntimeError("Base URL is not set in app config")
 
-                response = requests.get(f'{base_url}/api/v1/subjects/{subject_id}')
+                response = requests.get(f'{base_url}/api/v1/subject/{subject_id}')
                 
                 if response.status_code != 200:
                     logging.error(f"Failed to fetch subject: {response.text}")
@@ -99,9 +99,10 @@ class SubjectController:
                 return render_template('admindashboard.html', error_message = "Error occured while processing create request"), 500
 
 
-        @self.app.route('/api/v1/subjects', methods=['GET'])
+        @self.app.route('/api/v1/subject', methods=['GET'])
         def get_all_subjects():
             try:
+                logging.info('session %s', session)
                 username = session.get('admin_username')
                 logging.info('Request to fetch all subjects by user %s', username) 
 
@@ -122,7 +123,7 @@ class SubjectController:
                 return jsonify({"error": f"Error occurred while processing subjects request {e}"}), 500
               
             
-        @self.app.route('/api/v1/subjects/<subject_id>', methods=['GET'])
+        @self.app.route('/api/v1/subject/<subject_id>', methods=['GET'])
         def get_subject_by_id(subject_id):
             try:
                 logging.info(f'Start fetching subject using {subject_id}') 
@@ -144,7 +145,7 @@ class SubjectController:
                 return jsonify({"error": f"Error occurred while processing subject request {e}"}), 500
             
         
-        @self.app.route('/api/v1/subjects/create', methods=['POST'])
+        @self.app.route('/api/v1/subject/create', methods=['POST'])
         def create_subject():
             try:
                 name = request.form.get('name')
@@ -177,38 +178,46 @@ class SubjectController:
         @self.app.route('/api/v1/subject/update', methods=['POST'])
         def update_subject():
             try:
-                id = request.form.get('id')
+                subject_id = request.form.get('id')
                 name = request.form.get('name')
                 description = request.form.get('description')
                 username = session.get('admin_username')
+
                 if not username:
                     logging.info(f'session expired')
                     return redirect(url_for('render_admin_login_page'))
 
-                logging.info(f'Start updating subject named {name} and id {id}')
+                logging.info(f'Start updating subject named {name} and id {subject_id}')
 
                 if not name or not description:
                     raise ApplicationError("Invalid request", ApplicationError.INVALID_REQUEST)
                 
-                subject = self.subject_service.update_subject(id, name, description)
+                subject = self.subject_service.update_subject(subject_id, name, description)
 
                 if subject is None:
                     raise ApplicationError("Error occurred while creating subject", ApplicationError.INTERNAL_SERVER_ERROR)
     
-                return redirect(url_for('render_subject_page', subject_id=id))
+                return redirect(url_for('render_subject_page', subject_id=subject_id))
+            
             
             except ApplicationError as e:
                 error_details = e.to_dict()
-                return render_template('updatesubjectpage.html', error_message = error_details["error"]), e.status_code
+
+            except TimeoutError:
+                error_details = {"error": "Operation Timed out"}
+
+            except Exception:
+                error_details = {"error": "Error occurred while processing update request"}
+
+            existing_subject = self.subject_service.get_subject_by_id(subject_id)
             
-            except TimeoutError as e:
-                return render_template('updatesubjectpage.html', error_message = "Operation Timed out"), 504
-            
-            except Exception as e:
-                return render_template('updatesubjectpage.html', error_message = "Error occured while processing update request"), 500
+            if existing_subject is None:
+                return render_template('updatesubjectpage.html', error_message=error_details["error"]), 500
+
+            return render_template('updatesubjectpage.html', subject=existing_subject, username = session.get('admin_user'), error_message=error_details["error"])
 
 
-        @self.app.route('/api/v1/subjects/delete/<subject_id>', methods = ['POST'])
+        @self.app.route('/api/v1/subject/delete/<subject_id>', methods = ['POST'])
         def delete_subject(subject_id): 
             subject = None
             try:

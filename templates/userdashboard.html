@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Quiz Master | Quizzes</title>
+    <title>Quiz Master | User Dashboard</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static/admindashboardstyle.css" , rel="stylesheet">
@@ -14,16 +14,16 @@
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('render_admin_dashboard_page', username = username) }}">Home</a>
+                        <a class="nav-link" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('render_quiz_dashboard')}}">Quiz</a>
+                        <a class="nav-link" href="#">Scores</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Summary</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('admin_logout') }}">Logout</a>
+                        <a class="nav-link" href="#">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -31,8 +31,13 @@
     </nav>
     <br>
     <div class="container mt-4">
-        <h4 class="card-title font-weight-bold">Quiz Dashboard</h4>
+        <h3>Welcome {{ username }}</h3>
         <br>
+        {% if error_message %}
+        <div class="alert alert-danger">
+            {{ error_message }}
+        </div>
+        {% endif %}
         <div class="row">
             {% if quizzes %}
             {% for quiz in quizzes %}
@@ -40,27 +45,40 @@
                 <div class="card shadow-sm position-relative">
                     <div class="card-body">
                         <h5 class="card-title font-weight-bold">{{ quiz.quizName }}</h5>
-                        <hr>                        
-                        <p><span><img src="{{ url_for('static', filename='clock.png') }}" width="20px" height="20px"></span>   {{ quiz.timeDurationMinutes }} minutes</p>
-                        <p><span><img src="{{ url_for('static', filename='calendar.png') }}" width="22px" height="22px"></span>   {{ quiz.quizDate }}</p>
+                        <hr>
+                        <p>
+                            <span>
+                                <img src="{{ url_for('static', filename='clock.png') }}" width="20px" height="20px"
+                                    style="margin-right: 8px;">
+                            </span>
+                            {{ quiz.timeDurationMinutes }} minutes
+                        </p>
+                        <p>
+                            <span>
+                                <img src="{{ url_for('static', filename='calendar.png') }}" width="20px" height="20px"
+                                    style="margin-right: 8px;">
+                            </span>
+                            {{ quiz.quizDate }}
+                        </p>
                     </div>
                     <br>
                     <div class="card-footer bg-white border-0">
-                        <a href="{{ url_for('render_quiz_page_by_id', quiz_id = quiz.quizId) }}">
-                            <img src="{{ url_for('static', filename='right.png') }}" width="40px" height="40px"></a>
+                        <a href="{{ url_for('render_user_quiz_view_page', quiz_id = quiz.quizId) }}"
+                            class="btn btn-outline-dark">View</a>
+                     
+                        <a href="{{ url_for('start_quiz', quiz_id=quiz.quizId) }}"
+                            class="btn btn-outline-dark">
+                            Start
+                        </a>
                     </div>
                 </div>
             </div>
             {% endfor %}
             {% endif %}
-            <div class="col-md-3 mb-4">
-                <div class="position-relative text-center d-flex justify-content-center align-items-center" style="cursor: pointer; padding-top:50%;">
-                    <a href="{{ url_for('render_quiz_create_page')}}" class="btn btn-dark">+ Add Quiz</a>
-                </div>
-            </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Master | Create Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/updatestyle.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg shadow-sm">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link"
+                            href="{{ url_for('render_admin_dashboard_page', username = username) }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('render_quiz_dashboard') }}">Quiz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Summary</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('admin_logout') }}">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-box">
+        <div class="login-card">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 style="text-align: center; padding-top: 50%;">Update Question</h3>
+                </div>
+                <div class="col-md-6">
+                    {% if error_message %}
+                    <div class="alert alert-danger">
+                        {{ error_message }}
+                    </div>
+                    {% endif %}
+                    <form
+                        action="{{ url_for('update_question', quiz_id = quiz_id, question_id = question.questionId) }}"
+                        method="POST">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group text-left">
+                                    <label for="questionStatement">Question Statement</label>
+                                    <textarea class="form-control" id="questionStatement" name="questionStatement"
+                                        rows="3" placeholder="Enter Question Statement"
+                                        required>{{ question.questionStatement }}</textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group text-left">
+                                    <label for="option1">Option A</label>
+                                    <input type="text" class="form-control" id="option1" name="option1"
+                                        value="{{ question.option1 }}" placeholder="Enter Option A" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group text-left">
+                                    <label for="option2">Option B</label>
+                                    <input type="text" class="form-control" id="option2" name="option2"
+                                        value="{{ question.option2 }}" placeholder="Enter Option B" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group text-left">
+                                    <label for="option3">Option C</label>
+                                    <input type="text" class="form-control" id="option3" name="option3"
+                                        value="{{ question.option3 }}" placeholder="Enter Option C" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group text-left">
+                                    <label for="option4">Option D</label>
+                                    <input type="text" class="form-control" id="option4" name="option4"
+                                        value="{{ question.option4 }}" placeholder="Enter Option D" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group text-left">
+                                    <label for="correctOption">Correct Option</label>
+                                    <input type="text" class="form-control" id="correctOption" name="correctOption"
+                                        value="{{ question.correctOption }}" placeholder="Enter Correct Option"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group text-left">
+                                    <label for="marks">Marks</label>
+                                    <input type="text" class="form-control" id="marks" name="marks"
+                                        value="{{ question.marks }}" placeholder="Enter Marks" required>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-success btn-block">Update Question</button>
+                    </form>
+                    <br>
+                    <form action=" {{ url_for('delete_question', quiz_id = quiz_id, question_id = question.questionId ) }}" method="POST">
+                        <button type="submit" class="btn btn-outline-danger btn-block">Delete Question</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

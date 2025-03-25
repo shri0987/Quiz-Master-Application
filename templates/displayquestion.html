@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/displayquestion.css", rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="quiz-container">
+            <p class="fw-semibold" style="font-size: medium;">Question {{ index+1 }}</p>
+            <hr>
+            <p class="fw-semibold" style="font-size: medium;">{{ question.questionStatement }}</p>
+            <br>
+            <form action="{{ url_for('save_response', quiz_id = quiz.quizId, question_id = question.questionId)}}" method="POST">
+                <input type="hidden" name="quiz_id" value="{{ question.quizId }}">
+                <input type="hidden" name="question_id" value="{{ question.questionId }}">
+
+                <div class="options">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="selected_option" id="option1" value="{{ question.option1 }}" required>
+                        <label class="form-check-label" for="option1">
+                            {{ question.option1 }}
+                        </label>
+                    </div>
+                    <br>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="selected_option" id="option2" value="{{ question.option2 }}">
+                        <label class="form-check-label" for="option2">
+                            {{ question.option2 }}
+                        </label>
+                    </div>
+                    <br>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="selected_option" id="option3" value="{{ question.option3 }}">
+                        <label class="form-check-label" for="option3">
+                            {{ question.option3 }}
+                        </label>
+                    </div>
+                    <br>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="selected_option" id="option4" value="{{ question.option4 }}">
+                        <label class="form-check-label" for="option4">
+                            {{ question.option4 }}
+                        </label>
+                    </div>
+                </div>
+                <br>
+                <div class="btn-container">
+                    {% if index + 1 < total_questions %}
+                    <button type="submit" class="btn btn-success">Save and Next</button>
+                    {% endif %}
+                    <a href="{{ url_for('previous_question', quiz_id = quiz.quizId) }}" class="btn btn-outline-secondary">Back</a>
+                </div>
+            </form>
+        </div>
+
+        <div class="quiz-details">
+            <h5>{{ quiz.quizName }}</h5>
+            <p>{{ quiz.chapterId }}</p>
+            <hr>
+            <p><strong>Username :</strong> {{ username }}</p>
+            <p><strong>Time Duration :</strong> {{ quiz.timeDurationMinutes }} minutes</p>
+            <hr>
+            <p><strong>Questions Attempted :</strong> {{index + 1}}</p>
+            <p><strong>Total Questions :</strong> {{ total_questions }}</p>
+            <br>
+            <button class="btn btn-warning w-100">Submit</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

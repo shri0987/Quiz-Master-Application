@@ -33,7 +33,7 @@
     </nav>
     <div class="container-box">
         <div class="login-card">
-            <h3 style="text-align: center;">Add Quiz</h3>
+            <h3 style="text-align: center;">Add Question</h3>
             <br>
             {% if error_message %}
             <div class="alert alert-danger">
@@ -41,18 +41,12 @@
             </div>
             {% endif %}
 
-            <form action="{{ url_for('create_quiz') }}" method="POST">
+            <form action="{{ url_for('create_question', quiz_id = quiz_id) }}" method="POST">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="form-group text-left">
-                            <label for="username">Username</label>
-                            <input type="username" class="form-control" id="username" name="username" value = {{username}} readonly>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group text-left">
-                            <label for="chapterId">Chapter ID</label>
-                            <input type="text" class="form-control" id="chapterId" name="chapterId" placeholder="Enter Chapter ID" required>
+                            <label for="questionStatement">Question Statement</label>
+                            <textarea class="form-control" id="questionStatement" name="questionStatement" rows="3" placeholder="Enter Question Statement" required></textarea>
                         </div>
                     </div>
                 </div>
@@ -60,27 +54,47 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group text-left">
-                            <label for="quizDate">Quiz Date</label>
-                            <input type="date" class="form-control" id="quizDate" name="quizDate" placeholder="Enter Quiz Date" required>
+                            <label for="option1">Option A</label>
+                            <input type="text" class="form-control" id="option1" name="option1" placeholder="Enter Option A" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group text-left">
-                            <label for="timeDurationMinutes">Time Duration (minutes)</label>
-                            <input type="text" class="form-control" id="timeDurationMinutes" name="timeDurationMinutes" placeholder="Enter Time Duration" required>
+                            <label for="option2">Option B</label>
+                            <input type="text" class="form-control" id="option2" name="option2" placeholder="Enter Option B" required>
                         </div>
                     </div>
                 </div>
                 <div class = "row">
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <div class="form-group text-left">
-                            <label for="remarks">Remarks</label>
-                            <textarea class="form-control" id="remarks" name="remarks" rows="3" placeholder="Enter Remarks"></textarea>
+                            <label for="option3">Option C</label>
+                            <input type="text" class="form-control" id="option3" name="option3" placeholder="Enter Option C" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group text-left">
+                            <label for="option4">Option D</label>
+                            <input type="text" class="form-control" id="option4" name="option4" placeholder="Enter Option D" required>
+                        </div>
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class="col-md-6">
+                        <div class="form-group text-left">
+                            <label for="correctOption">Correct Option</label>
+                            <input type="text" class="form-control" id="correctOption" name="correctOption" placeholder="Enter Correct Option" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group text-left">
+                            <label for="marks">Marks</label>
+                            <input type="text" class="form-control" id="marks" name="marks" placeholder="Enter Marks" required>
                         </div>
                     </div>
                 </div>
                 <br>
-                <button type="submit" class="btn btn-success btn-block">Create Quiz</button>
+                <button type="submit" class="btn btn-success btn-block">Create Question</button>
             </form>            
             <br>
         </div>
